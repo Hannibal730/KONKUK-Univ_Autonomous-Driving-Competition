@@ -53,12 +53,13 @@
   <img src="https://github.com/user-attachments/assets/85175b2b-5a76-460c-bf55-6e8d5ac9a00f" width="200" alt="Image">
   <img src="https://github.com/user-attachments/assets/8ba87864-7ac3-47da-8831-2f9b69dc81dc" width="200" alt="Image">
 
-  <br>
 
   - **이미지 디렉토리:**  
-  - `/image/go` : "Go" 이미지들  
-  - `/image/left` : "Left" 이미지들  
-  - `/image/right` : "Right" 이미지들
+    image
+    ├── go : "Go" 이미지들 
+    ├── left : "Left" 이미지들  
+    └── right : "Right" 이미지들
+
 
 <br><br>
 ## 모델 아키텍처 상세 설명
