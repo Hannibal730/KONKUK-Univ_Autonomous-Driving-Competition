@@ -23,7 +23,7 @@
 - **전이학습 기반 모델 구성:** 사전 학습된 ResNet-18 모델을 작은 64x64 입력 이미지에 맞게 수정하고, 최종 Fully Connected (FC) 레이어를 3 클래스 분류에 맞게 재구성
 - **학습 및 검증 루프:** CrossEntropyLoss, Adam Optimizer, ReduceLROnPlateau 스케줄러를 사용하여 학습 진행 및 Early Stopping 적용
 - **성능 시각화:** 학습 및 검증 Loss, Accuracy 곡선을 시각화하여 학습 과정을 모니터링
-- **모델 저장 및 평가:** 베스트 모델 저장 후 최종 검증 데이터셋에 대해 평가 진행 <br>
+- **모델 저장 및 평가:** 베스트 모델 저장 후 최종 검증 데이터셋에 대해 평가 진행 <br><br>
 
 
 ## 성능
