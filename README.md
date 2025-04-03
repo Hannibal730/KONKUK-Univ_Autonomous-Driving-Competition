@@ -2,7 +2,7 @@
 
 #### 내용: 카메라와 모터 제어로직 코딩, 촬영한 주행데이터를 기반으로 자율주행 모델 개발
 
-#### 진행 기간: 2024/06/26~2024/06/27
+#### 진행 기간: 2024/06/27
 
 #### 주관: 건국대학교
 
@@ -10,7 +10,8 @@
 
 #### 팀원: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 
-#### 수상이력: 대상 <br><br><br><br>
+#### 수상이력: 대상 <br><br><br><br>    [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
+
 
 
 
