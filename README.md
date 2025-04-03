@@ -4,13 +4,11 @@
 
 #### 진행 기간: 2024/06/27
 
-#### 주관: 건국대학교
-
 #### 주임교수: 건국대학교 기계항공공학부 김창완
 
 #### 팀원: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 
-#### 수상이력: 대상  [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
+#### 수상이력: 1등  [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
 <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="500" alt="Image">
 
 # 딥러닝 전이학습을 활용한 이미지 분류
