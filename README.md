@@ -9,7 +9,7 @@
 - #### **팀원**: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 
 - #### **수상이력**: 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
-<img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="500" alt="Image">
+  <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">
 <br>
 
 # 딥러닝 전이학습을 활용한 이미지 분류
@@ -25,14 +25,12 @@
 - **성능 시각화:** 학습 및 검증 Loss, Accuracy 곡선을 시각화하여 학습 과정을 모니터링
 - **모델 저장 및 평가:** 베스트 모델 저장 후 최종 검증 데이터셋에 대해 평가 진행 <br>
 
-
-
 ## 성능
 <img src="https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72" width="500" alt="Image">
 <img src="https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d" width="500" alt="Image">
 
 <br><br>
-## 사용 기술
+## 라이브러리
 
 - **프로그래밍 언어:** Python 3.x
 - **딥러닝 프레임워크:** PyTorch, Torchvision
