@@ -34,13 +34,7 @@
 <img src="https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72" width="500" alt="Image">
 <img src="https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d" width="500" alt="Image">
 
-<br><br>
-## 라이브러리
 
-- **프로그래밍 언어:** Python 3.x
-- **딥러닝 프레임워크:** PyTorch, Torchvision
-- **데이터 전처리:** OpenCV, NumPy, scikit-learn
-- **시각화:** Matplotlib
 
 <br><br>
 ## 데이터 구조
