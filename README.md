@@ -120,12 +120,35 @@
 
 2. **데이터 준비**
    각 클래스 별로 `/image/go`, `/image/left`, `/image/right` 경로에 이미지 파일을 배치합니다.
-   이미지 파일 다운로드 방법
+   <br>이미지 파일 다운로드 방법<br>
    [Click Here](https://drive.google.com/file/d/1aTDsimYZ3yXoyvhpsowJX1jH8MCZJUkK/view?usp=drive_link)
 
 
-3. **코드 실행**
+4. **코드 실행**
    학습 스크립트를 실행합니다.
 
     ```bash
    python model.py
+
+
+
+```mermaid
+flowchart TD
+    A["Input: 64×64×3"]
+    B["Conv1: (3x3, 64)<br/> stride=1, padding=1<br/>+ BatchNorm <br/> + ReLU"]
+    C["ResNet‑18 Adjustment:<br/>MaxPool Layer Removed<br/>(Replaced with Identity)"]
+    D["ResNet‑18 Backbone: <br/>Conv2: (3x3, 64) <br/> → 64×64×64 <br/> Conv3: (3x3, 128) <br/>→ 32×32×128<br/> Conv4: (3x3, 256) <br/> →16×16×256 <br/> Conv5: (3x3, 512) <br/> → 8×8×512"]
+    E["Global Average Pooling:<br/>AdaptiveAvgPool2d <br/> → 1×1×512"]
+    F["Flatten (→ 512)"]
+    G1["Classifier:<br/>[Dropout(0.5)]<br/>Linear(512, 32)"]
+    G2["Classifier:<br/>Linear(512, 32) <br/>+ BatchNorm <br/> + ReLU <br/> + Dropout(0.6) <br/> + Linear(512, 32)"]
+    H["Output: 3 Logits"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G1
+    G1 --> G2
+    G2 --> H
