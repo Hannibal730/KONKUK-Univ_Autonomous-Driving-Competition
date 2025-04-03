@@ -10,7 +10,7 @@
 
 #### 팀원: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 
-#### 수상이력: 대상 <br><br><br><br>    [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
+#### 수상이력: 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
 
 
 
@@ -146,8 +146,7 @@ flowchart TD
 
 2. **데이터 준비**
    각 클래스 별로 `/image/go`, `/image/left`, `/image/right` 경로에 이미지 파일을 배치합니다.
-   <br>이미지 파일 다운로드 방법<br>
-   [Click Here](https://drive.google.com/file/d/1aTDsimYZ3yXoyvhpsowJX1jH8MCZJUkK/view?usp=drive_link)
+   <br>이미지 파일 다운로드 [Click Here](https://drive.google.com/file/d/1aTDsimYZ3yXoyvhpsowJX1jH8MCZJUkK/view?usp=drive_link)
 
 
 4. **코드 실행**
