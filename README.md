@@ -27,6 +27,11 @@
 - **성능 시각화:** 학습 및 검증 Loss, Accuracy 곡선을 시각화하여 학습 과정을 모니터링
 - **모델 저장 및 평가:** 베스트 모델 저장 후 최종 검증 데이터셋에 대해 평가 진행
 
+
+## 성능
+![Image](https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d)
+![Image](https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72)
+
 ## 사용 기술
 
 - **프로그래밍 언어:** Python 3.x
