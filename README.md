@@ -1,16 +1,16 @@
 # 건국대학교 주관 행동모사 자율주행 경진대회
 
-#### 내용: 카메라와 모터 제어로직 코딩, 촬영한 주행데이터를 기반으로 자율주행 모델 개발
+- #### **내용**: 카메라와 모터 제어로직 코딩, 촬영한 주행데이터를 기반으로 자율주행 모델 개발
 
-#### 진행 기간: 2024/06/27
+- #### **대회일**: 2024/06/27
 
-#### 주임교수: 건국대학교 기계항공공학부 김창완
+- #### **주임교수**: 건국대학교 기계항공공학부 김창완
 
-#### 팀원: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
+- #### **팀원**: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 
-#### 수상이력: 1등  [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
+- #### **수상이력**: 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
 <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="500" alt="Image">
-
+<br>
 # 딥러닝 전이학습을 활용한 이미지 분류
 
 이 프로젝트는 딥러닝 모델(ResNet-18 기반 전이학습)을 활용하여 3가지 방향(Go, Left, Right) 이미지 분류 작업을 수행합니다. 주어진 이미지를 학습 및 검증 데이터로 나누고, 데이터 증강 및 전처리를 통해 모델을 학습시킨 후 최적의 성능을 보인 모델을 저장합니다.
