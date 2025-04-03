@@ -60,31 +60,31 @@
 
 ### 1. ResNet-18 기반 모델
 - **사전 학습 가중치 사용:**  
-  - `models.resnet18(weights=models.ResNet18_Weights.DEFAULT)`를 통해 ImageNet 데이터셋으로 사전 학습된 가중치를 사용하여 모델을 초기화합니다.
+  - `models.resnet18(weights=models.ResNet18_Weights.DEFAULT)`를 통해 ImageNet 데이터셋으로 사전 학습된 가중치를 사용하여 모델을 초기화합니다. <br>
   
-- **첫 번째 Convolution 레이어 수정:**  
+### 2. ResNet-18의 첫 번째 Convolution 레이어 수정:**  
   - **원래 구조:** 7x7 커널, stride=2, padding=3  
   - **수정 후 구조:** 3x3 커널, stride=1, padding=1  
-  - **이유:** 작은 해상도(64x64)의 이미지에서 과도한 다운샘플링을 방지하고, 세밀한 특징을 추출하기 위해 변경되었습니다.
+  - **이유:** 작은 해상도(64x64)의 이미지에서 과도한 다운샘플링을 방지하고, 세밀한 특징을 추출하기 위해 변경되었습니다. <br>
   
-- **MaxPooling 레이어 제거:**  
+### 3. ResNet-18의 MaxPooling 레이어 제거:**  
   - 기존 ResNet-18은 첫 번째 Convolution 이후 MaxPooling 레이어를 사용하여 해상도를 줄입니다.
-  - 작은 이미지에서는 중요한 공간 정보를 잃을 수 있으므로, 이를 `nn.Identity()`로 대체하여 제거하였습니다.
+  - 작은 이미지에서는 중요한 공간 정보를 잃을 수 있으므로, 이를 `nn.Identity()`로 대체하여 제거하였습니다. <br>
 
-### 2. Fully Connected (FC) 레이어 재구성
+### 4. ResNet-18의 Fully Connected 레이어 재구성
 - **기존 FC 레이어 교체:**  
-  - ImageNet 분류를 위해 설계된 1000 클래스 출력 대신, 3 클래스(Go, Left, Right) 분류를 위한 레이어로 재구성합니다.
+  - ImageNet 분류를 위해 설계된 1000 클래스 출력 대신, 3 클래스(Go, Left, Right) 분류를 위한 레이어로 재구성합니다. <br>
   
-- **세부 구성:**  
-  - **중간 Hidden Layer:**  
-    - **Linear Layer:** 입력 feature 수(`num_features`)를 32개의 뉴런으로 축소  
-    - **Batch Normalization:** 학습 안정성과 수렴 속도 향상을 위해 적용  
-    - **ReLU 활성화 함수:** 비선형성을 부여하여 모델 성능을 향상  
-    - **Dropout (0.6):** 과적합을 방지하기 위해 높은 확률로 뉴런을 랜덤하게 비활성화  
-  - **최종 출력 레이어:**  
-    - 32개의 뉴런을 3개의 클래스 출력으로 변환하는 Linear 레이어를 사용하여 최종 분류 결과를 도출합니다.
+### 5. Hidden Layer 세부 구성  
+  - **Linear Layer:** 입력 feature 수(`num_features`)를 32개의 뉴런으로 축소  
+  - **Batch Normalization:** 학습 안정성과 수렴 속도 향상을 위해 적용  
+  - **ReLU 활성화 함수:** 비선형성을 부여하여 모델 성능을 향상  
+  - **Dropout (0.6):** 과적합을 방지하기 위해 높은 확률로 뉴런을 랜덤하게 비활성화 <br>
+    
+### 4. Hidden Layer 세부 구성  
+  - 32개의 뉴런을 3개의 클래스 출력으로 변환하는 Linear 레이어를 사용하여 최종 분류 결과를 도출합니다. <br>
 
-### 3. 전체 모델 흐름
+## 모델 아키텍처 전체 흐름
 1. **입력 처리:**  
    - 입력 이미지의 크기는 64x64이며, RGB 채널로 구성됩니다.
 2. **Feature Extraction:**  
