@@ -8,7 +8,7 @@
 
 #### 주임교수: 건국대학교 기계항공공학부 김창완
 
-#### 팀원: 건국대학교 기계공학과 석승연, 건국대학교 응용통계학과 최대승
+#### 팀원: 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 
 #### 수상이력: 대상 <br><br><br><br>
 
@@ -29,8 +29,7 @@
 
 
 ## 성능
-![Image](https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72)
-![Image](https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d)
+![Image](https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72) ![Image](https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d)
 
 
 ## 사용 기술
