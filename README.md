@@ -19,7 +19,7 @@
 ## 주요 기능
 
 - **Custom Dataset 구현:** 이미지 데이터와 라벨을 기반으로 PyTorch Dataset 클래스를 커스터마이징
-- **데이터 증강 및 전처리:** 학습 데이터에 대해 랜덤 회전, 평행 이동, 크롭 등 다양한 증강 기법 적용
+- **데이터 증강 및 전처리:** 학습 데이터에 대해 랜덤 회전, 평행 이동, 크롭을 증강 기법으로 적용
 - **전이학습 기반 모델 구성:** 사전 학습된 ResNet-18 모델을 작은 64x64 입력 이미지에 맞게 수정하고, 최종 Fully Connected (FC) 레이어를 3 클래스 분류에 맞게 재구성
 - **학습 및 검증 루프:** CrossEntropyLoss, Adam Optimizer, ReduceLROnPlateau 스케줄러를 사용하여 학습 진행 및 Early Stopping 적용
 - **성능 시각화:** 학습 및 검증 Loss, Accuracy 곡선을 시각화하여 학습 과정을 모니터링
