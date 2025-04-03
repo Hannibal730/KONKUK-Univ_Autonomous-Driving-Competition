@@ -31,7 +31,8 @@
 ## 성능
 ![Image](https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72)
 ![Image](https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d)
-<img src="https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d" width="300" alt="Image">
+<img src="https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72" width="500" alt="Image">
+<img src="https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d" width="500" alt="Image">
 
 
 <br><br>
