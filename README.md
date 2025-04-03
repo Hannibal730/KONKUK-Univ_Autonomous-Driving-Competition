@@ -4,7 +4,7 @@
 
 #### 진행 기간: 2024/06/26~2024/06/27
 
-#### 주관: 건국대학교 미래형자동차 사업단
+#### 주관: 건국대학교
 
 #### 주임교수: 건국대학교 기계항공공학부 김창완
 
@@ -29,7 +29,10 @@
 
 <br><br>
 ## 성능
-![Image](https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72) ![Image](https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d)
+![Image](https://github.com/user-attachments/assets/2c97a8ee-8687-48a2-9408-ca63194fff72)
+![Image](https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d)
+<img src="https://github.com/user-attachments/assets/6023c12b-572a-4a56-8155-5f524f32d53d" width="300" alt="Image">
+
 
 <br><br>
 ## 사용 기술
