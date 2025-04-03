@@ -41,17 +41,24 @@
 <br><br>
 ## 데이터 구조
 
-- **이미지 디렉토리:**  
-  - `/image/go` : "Go" 이미지들  
-  - `/image/left` : "Left" 이미지들  
-  - `/image/right` : "Right" 이미지들
-
 - **이미지 전처리:**
   - 1. **원본 이미지:** 라즈베리 파이로 캡처한 raw 이미지의 사이즈는 (1500, 1000)입니다.
   - 2. **회전:** 이미지를 180도 회전시킵니다. (`cv2.flip(frame, -1)` 사용)
   - 3. **초기 리사이즈:** ROI 추출을 용이하게 하기 위해 이미지를 (512, 512) 크기로 리사이즈합니다.
   - 4. **ROI 생성:** 상단 200픽셀을 제거하여 ROI를 생성합니다. (`frame = frame[200:,:]`)
   - 5. **최종 리사이즈:** 추출된 ROI 이미지를 모델 입력 사이즈인 (64, 64)로 리사이즈하여 저장합니다.
+
+- **순서대로 :**  
+<img src="https://github.com/user-attachments/assets/85175b2b-5a76-460c-bf55-6e8d5ac9a00f" width="200" alt="Image">
+<img src="https://github.com/user-attachments/assets/95112164-7efa-46c3-af64-9926aae694b3" width="200" alt="Image">
+<img src="https://github.com/user-attachments/assets/8ba87864-7ac3-47da-8831-2f9b69dc81dc" width="200" alt="Image">
+
+
+
+  - **이미지 디렉토리:**  
+  - `/image/go` : "Go" 이미지들  
+  - `/image/left` : "Left" 이미지들  
+  - `/image/right` : "Right" 이미지들
 
 <br><br>
 ## 모델 아키텍처 상세 설명
