@@ -94,6 +94,31 @@
 
 이와 같은 모델 아키텍처 설계는 작은 해상도의 이미지에서도 충분한 특징 추출 및 분류 성능을 발휘할 수 있도록 최적화되었습니다.
 
+
+```mermaid
+flowchart TD
+    A["Input: 64×64×3"]
+    B["Conv1: (3x3, 64)<br/> stride=1, padding=1<br/>+ BatchNorm <br/> + ReLU"]
+    C["ResNet‑18 Adjustment:<br/>MaxPool Layer Removed<br/>(Replaced with Identity)"]
+    D["ResNet‑18 Backbone: <br/>Conv2: (3x3, 64) <br/> → 64×64×64 <br/> Conv3: (3x3, 128) <br/>→ 32×32×128<br/> Conv4: (3x3, 256) <br/> →16×16×256 <br/> Conv5: (3x3, 512) <br/> → 8×8×512"]
+    E["Global Average Pooling:<br/>AdaptiveAvgPool2d <br/> → 1×1×512"]
+    F["Flatten (→ 512)"]
+    G1["Classifier:<br/>[Dropout(0.5)]<br/>Linear(512, 32)"]
+    G2["Classifier:<br/>Linear(512, 32) <br/>+ BatchNorm <br/> + ReLU <br/> + Dropout(0.6) <br/> + Linear(512, 32)"]
+    H["Output: 3 Logits"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G1
+    G1 --> G2
+    G2 --> H
+
+
+
+
 <br><br>
 ## 학습 과정
 
@@ -129,26 +154,3 @@
 
     ```bash
    python model.py
-
-
-
-```mermaid
-flowchart TD
-    A["Input: 64×64×3"]
-    B["Conv1: (3x3, 64)<br/> stride=1, padding=1<br/>+ BatchNorm <br/> + ReLU"]
-    C["ResNet‑18 Adjustment:<br/>MaxPool Layer Removed<br/>(Replaced with Identity)"]
-    D["ResNet‑18 Backbone: <br/>Conv2: (3x3, 64) <br/> → 64×64×64 <br/> Conv3: (3x3, 128) <br/>→ 32×32×128<br/> Conv4: (3x3, 256) <br/> →16×16×256 <br/> Conv5: (3x3, 512) <br/> → 8×8×512"]
-    E["Global Average Pooling:<br/>AdaptiveAvgPool2d <br/> → 1×1×512"]
-    F["Flatten (→ 512)"]
-    G1["Classifier:<br/>[Dropout(0.5)]<br/>Linear(512, 32)"]
-    G2["Classifier:<br/>Linear(512, 32) <br/>+ BatchNorm <br/> + ReLU <br/> + Dropout(0.6) <br/> + Linear(512, 32)"]
-    H["Output: 3 Logits"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G1
-    G1 --> G2
-    G2 --> H
