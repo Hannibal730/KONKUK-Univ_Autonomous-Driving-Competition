@@ -246,23 +246,48 @@ flowchart TD
 
 ---
 
+
 ```mermaid
-flowchart LR
-  A[Input Image<br/>64x64x3] --> B[Conv2d<br/>3 → 64, 3×3, padding=1]
-  B --> C[ReLU]
-  C --> D[MaxPool2d<br/>kernel=2, stride=2<br/>(Output: 32×32×64)]
+flowchart TD
+  A["Input Image\n64x64x3"] --> B["Conv2d\n3 → 64, 3x3, padding=1"]
+  B --> C["ReLU"]
+  C --> D["MaxPool2d\nkernel=2, stride=2\n(Output: 32x32x64)"]
   
-  D --> E[Conv2d<br/>64 → 128, 3×3, padding=1]
-  E --> F[ReLU]
-  F --> G[MaxPool2d<br/>kernel=2, stride=2<br/>(Output: 16×16×128)]
+  D --> E["Conv2d\n64 → 128, 3x3, padding=1"]
+  E --> F["ReLU"]
+  F --> G["MaxPool2d\nkernel=2, stride=2\n(Output: 16x16x128)"]
   
-  G --> H[Conv2d<br/>128 → 256, 3×3, padding=1]
-  H --> I[ReLU]
-  I --> J[MaxPool2d<br/>kernel=2, stride=2<br/>(Output: 8×8×256)]
+  G --> H["Conv2d\n128 → 256, 3x3, padding=1"]
+  H --> I["ReLU"]
+  I --> J["MaxPool2d\nkernel=2, stride=2\n(Output: 8x8x256)"]
   
-  J --> K[Flatten<br/>(16384 dims)]
-  K --> L[Linear<br/>16384 → 64]
-  L --> M[ReLU]
-  M --> N[Linear<br/>64 → num_classes (3)]
-  N --> O[Output]
+  J --> K["Flatten\n(16384 dims)"]
+  K --> L["Linear\n16384 → 64"]
+  L --> M["ReLU"]
+  M --> N["Linear\n64 → num_classes (3)"]
+  N --> O["Output"]
+
+```
+
+```mermaid
+flowchart TD
+    A["Input: 64×64×3"]
+    B["Conv1: (3x3, 64)<br/> stride=1, padding=1<br/>+ BatchNorm <br/> + ReLU"]
+    C["ResNet‑18 Adjustment:<br/>MaxPool Layer Removed<br/>(Replaced with Identity)"]
+    D["ResNet‑18 Backbone: <br/>Conv2: (3x3, 64) <br/> → 64×64×64 <br/> Conv3: (3x3, 128) <br/>→ 32×32×128<br/> Conv4: (3x3, 256) <br/> →16×16×256 <br/> Conv5: (3x3, 512) <br/> → 8×8×512"]
+    E["Global Average Pooling:<br/>AdaptiveAvgPool2d <br/> → 1×1×512"]
+    F["Flatten (→ 512)"]
+    G1["Classifier:<br/>[Dropout(0.5)]<br/>Linear(512, 32)"]
+    G2["Classifier:<br/>Linear(512, 32) <br/>+ BatchNorm <br/> + ReLU <br/> + Dropout(0.6) <br/> + Linear(512, 32)"]
+    H["Output: 3 Logits"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G1
+    G1 --> G2
+    G2 --> H
+
 ```
