@@ -28,7 +28,7 @@
 ## 2. 이미지 데이터 전처리 (Preprocess Image Data)
 
 ### 2.1 데이터 수집
- 
+
   - 연습 트랙에서 자동차를  수동주행하면서 전방 카메라로 주행 데이터를 취득한다.
   - 취득한 데이터는 직진, 좌회전, 우회전으로 구분하고 각각 0, 1, 2로 라벨링한다.
   - 그리고 각각 `/image/go`, `/image/left`, `/image/right` 디렉토리에 저장한다.
@@ -45,7 +45,6 @@
 |direction|go|left|right|
 |Preprocessed <br> images|<img src="https://github.com/user-attachments/assets/95112164-7efa-46c3-af64-9926aae694b3" width="150" alt="Image">  |<img src="https://github.com/user-attachments/assets/85175b2b-5a76-460c-bf55-6e8d5ac9a00f" width="150" alt="Image">|<img src="https://github.com/user-attachments/assets/8ba87864-7ac3-47da-8831-2f9b69dc81dc" width="150" alt="Image">|
 
-<br>
 
 ### 2.3 데이터 저장 디렉토리
  -  image <br>
@@ -61,7 +60,7 @@
 ## 3. 데이터 증강 (Dataset and Data Augmentation)
 ### 3.1 데이터셋
 - **데이터 로드:**  
-  - 각 클래스에 해당하는 이미지들은 `/image/go`, `/image/left`, `/image/right` 디렉토리에서 OpenCV를 통해 로드된다. 
+  - 각 클래스에 해당하는 이미지들은 `/image/go`, `/image/left`, `/image/right` 디렉토리에서 OpenCV를 통해 로드된다.
   - 이미지는 BGR 포맷으로 읽혀지며, 이후 RGB로 변환된다.
   - 데이터는 float32 형식으로 변환된 후, 픽셀 값이 [0,255]에서 [-1,1] 범위로 정규화된다.
 - **데이터 규모:**  
@@ -246,3 +245,24 @@ flowchart TD
   다양한 데이터 증강 방법에 대해서 계획적으로 실험하는 방법을 공부하고 싶다.
 
 ---
+
+```mermaid
+flowchart LR
+  A[Input Image<br/>64x64x3] --> B[Conv2d<br/>3 → 64, 3×3, padding=1]
+  B --> C[ReLU]
+  C --> D[MaxPool2d<br/>kernel=2, stride=2<br/>(Output: 32×32×64)]
+  
+  D --> E[Conv2d<br/>64 → 128, 3×3, padding=1]
+  E --> F[ReLU]
+  F --> G[MaxPool2d<br/>kernel=2, stride=2<br/>(Output: 16×16×128)]
+  
+  G --> H[Conv2d<br/>128 → 256, 3×3, padding=1]
+  H --> I[ReLU]
+  I --> J[MaxPool2d<br/>kernel=2, stride=2<br/>(Output: 8×8×256)]
+  
+  J --> K[Flatten<br/>(16384 dims)]
+  K --> L[Linear<br/>16384 → 64]
+  L --> M[ReLU]
+  M --> N[Linear<br/>64 → num_classes (3)]
+  N --> O[Output]
+```
