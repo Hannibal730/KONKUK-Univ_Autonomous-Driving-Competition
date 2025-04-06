@@ -250,9 +250,9 @@ flowchart TD
 ```mermaid
 flowchart TD
     A["Input: 64×64×3"]
-    B["Conv Layer 1:<br/>(3x3, 64)<br/>+ ReLU<br/>+ MaxPool2d<br/>(2x2, stride=2)<br/>(Output: 32×32×64)"]
-    C["Conv Layer 2:<br/>(3x3, 128)<br/>+ ReLU<br/>+ MaxPool2d<br/>(2x2, stride=2)<br/>(Output: 16×16×128)"]
-    D["Conv Layer 3:<br/>(3x3, 256)<br/>+ ReLU<br/>+ MaxPool2d<br/>(2x2, stride=2)<br/>(Output: 8×8×256)"]
+    B["Conv Layer 1:<br/>  conv3-64<br/>+(padding, stride=1)   <br/>+ReLU<br/>+ MaxPool2d<br/>(2x2, stride=2)<br/>(Output: 32×32×64)"]
+    C["Conv Layer 2:<br/>  conv3-128<br/>+(padding, stride=1)  <br/>+ ReLU<br/>+ MaxPool2d<br/>(2x2, stride=2)<br/>(Output: 16×16×128)"]
+    D["Conv Layer 3:<br/>  conv3-256<br/>+(padding, stride=1)    <br/>+ ReLU<br/>+ MaxPool2d<br/>(2x2, stride=2)<br/>(Output: 8×8×256)"]
     E["Flatten<br/>(16384 dims)"]
     F["Linear Layer 1:<br/>(16384 → 64)<br/>+ ReLU"]
     G["Linear Layer 2:<br/>(64 → num_classes (3))"]
