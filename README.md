@@ -40,9 +40,8 @@
   - **4. ROI 생성:** 상단 200픽셀을 제거하여 ROI를 생성합니다. (`frame = frame[200:,:]`)
   - **5. 최종 리사이즈:** 추출된 ROI 이미지를 모델 입력 사이즈인 (64, 64)로 리사이즈한다.
 
-|||||
-|:---:|:---:|:---:|:---:|
 |direction|go|left|right|
+|:---:|:---:|:---:|:---:|
 |Preprocessed <br> images|<img src="https://github.com/user-attachments/assets/95112164-7efa-46c3-af64-9926aae694b3" width="150" alt="Image">  |<img src="https://github.com/user-attachments/assets/85175b2b-5a76-460c-bf55-6e8d5ac9a00f" width="150" alt="Image">|<img src="https://github.com/user-attachments/assets/8ba87864-7ac3-47da-8831-2f9b69dc81dc" width="150" alt="Image">|
 
 
@@ -189,6 +188,9 @@ flowchart TD
 ### 6.1 직접 설계한 초기 모델 A
 - 컨볼루젼 층 표기방식:  
 conv 'receptive field size' - 'number of channels'
+- 학습 방법:  
+SGD optimizer (lr=5*1e-3)
+batch size 128
 
 ```mermaid
 flowchart TD
@@ -213,30 +215,35 @@ flowchart TD
 
 ### 6.2 val loss를 기준으로 성능 실험
 - 초기 모델 A부터 성능을 실험하며, val loss를 낮추기 위한 파인 튜닝을 진행하였다.
-- A의 변형만으로는 성능 개선에 한계를 느끼서 전이학습을 도입하였다.
+- A의 변형만으로는 성능 개선에 한계를 느꼈고, 이후 전이학습을 도입하게 되었다.
 
 
 
-||||||
-|:---:|:---:|:---:|:---:|:---:|
-|A|B|C|D|E|
-|![Image](https://github.com/user-attachments/assets/c3576f7f-ec99-49de-8e85-1ab2f5c5ea8e)|![Image](https://github.com/user-attachments/assets/b5c82881-c747-4dac-971c-2b28b217ca55)|![Image](https://github.com/user-attachments/assets/25129819-f665-46da-ba8b-cb1020751454)|![Image](https://github.com/user-attachments/assets/c081ffa6-8505-40ef-b466-5be5281d37b5)|![Image](https://github.com/user-attachments/assets/55edc841-b98f-46ba-85fa-498c7ff54b0f)|
-|loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 도입이 필요해보인다.|||||
-|F|G|H|I|J|
-|![Image](https://github.com/user-attachments/assets/912684d8-a1e9-4adf-99c4-4477c633e6fc)|![Image](https://github.com/user-attachments/assets/7d045543-033e-4222-8a6c-27cc9450006c)|![Image](https://github.com/user-attachments/assets/c826b9c0-e07a-47bb-ae3e-958fc485e993)|![Image](https://github.com/user-attachments/assets/2f31b431-8337-4049-aa48-da4bcc9d2e4c)|![Image](https://github.com/user-attachments/assets/fca806ee-93e9-4378-a196-d7dfed50bda0)|
-||||||
-|K|L|M|N|O|
-|![Image](https://github.com/user-attachments/assets/da966e73-111d-47de-80ed-bbdbf2b25b06)|![Image](https://github.com/user-attachments/assets/d081e5ba-6e3b-45af-8fb4-fd0e485edab0)|![Image](https://github.com/user-attachments/assets/1370e4f4-82e9-4124-a530-03111bce1070)|![Image](https://github.com/user-attachments/assets/044a2fd8-79b8-4d7b-8ccf-09e31f6ccec5)|![Image](https://github.com/user-attachments/assets/c9c071d5-f407-430d-817a-4c586f701aeb)|
-||||||
-|P|Q|R|S|T|
-|![Image](https://github.com/user-attachments/assets/ef1c948a-383b-40d0-900a-be4f163b3c9b)|![Image](https://github.com/user-attachments/assets/49d357ed-3aa7-4930-a044-8c2ea6860700)|![Image](https://github.com/user-attachments/assets/5ec0f562-f645-41ef-b866-622c399c5d3e)|![Image](https://github.com/user-attachments/assets/73ab3b16-5964-4401-a565-b981563bcbfe)|![Image](https://github.com/user-attachments/assets/59b81288-9da0-4e20-9b34-a818a018db47)|
-||||||
-|U|V|W|X|Y|
-|![Image](https://github.com/user-attachments/assets/3b1016c0-c9e2-43bb-bb58-19dcba555812)|![Image](https://github.com/user-attachments/assets/be389cb8-70ec-4315-bb1f-980d5d9d91a0)|![Image](https://github.com/user-attachments/assets/13840fec-c408-4997-ad1a-244af4a36dfd)|![Image](https://github.com/user-attachments/assets/2a7e3240-37fa-466f-9a58-8b7dccaa67c2)|![Image](https://github.com/user-attachments/assets/ce3cecb4-3064-4621-8ee8-8b18243af2c4)|
-||||||
-|Z|AA|AB|AC|AD|
-|![Image](https://github.com/user-attachments/assets/43c91944-2c0b-45b2-9b01-fe9156c32a60)|![Image](https://github.com/user-attachments/assets/a7a7dd91-3cce-47c1-8e46-4e724822bf22)|![Image](https://github.com/user-attachments/assets/3a86c501-1fab-4782-9159-097e57bc7d20)|![Image](https://github.com/user-attachments/assets/e9a1b41c-06bc-41d8-986d-6177c6608650)|![Image](https://github.com/user-attachments/assets/10e9df58-fd60-4c86-9afa-c1b945e6f636)|
-||||||
+|model name|A|B|C|D|E|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|feature	초기 설계 모델. SGD (lr=5*1e-3	|	A에 스케줄러(0.5배) 추가. min_lr=1e-6	|	B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가	|	C의 배치 사이즈를 128에서 256으로 수정	|	C의 배치 사이즈를 128에서 512으로 수정|
+|val loss|![Image](https://github.com/user-attachments/assets/c3576f7f-ec99-49de-8e85-1ab2f5c5ea8e)|![Image](https://github.com/user-attachments/assets/b5c82881-c747-4dac-971c-2b28b217ca55)|![Image](https://github.com/user-attachments/assets/25129819-f665-46da-ba8b-cb1020751454)|![Image](https://github.com/user-attachments/assets/c081ffa6-8505-40ef-b466-5be5281d37b5)|![Image](https://github.com/user-attachments/assets/55edc841-b98f-46ba-85fa-498c7ff54b0f)|
+|result||||||
+|model name|F|G|H|I|J|
+|feature||||||
+|val loss|![Image](https://github.com/user-attachments/assets/912684d8-a1e9-4adf-99c4-4477c633e6fc)|![Image](https://github.com/user-attachments/assets/7d045543-033e-4222-8a6c-27cc9450006c)|![Image](https://github.com/user-attachments/assets/c826b9c0-e07a-47bb-ae3e-958fc485e993)|![Image](https://github.com/user-attachments/assets/2f31b431-8337-4049-aa48-da4bcc9d2e4c)|![Image](https://github.com/user-attachments/assets/fca806ee-93e9-4378-a196-d7dfed50bda0)|
+|result||||||
+|model name|K|L|M|N|O|
+|feature||||||
+|val loss|![Image](https://github.com/user-attachments/assets/da966e73-111d-47de-80ed-bbdbf2b25b06)|![Image](https://github.com/user-attachments/assets/d081e5ba-6e3b-45af-8fb4-fd0e485edab0)|![Image](https://github.com/user-attachments/assets/1370e4f4-82e9-4124-a530-03111bce1070)|![Image](https://github.com/user-attachments/assets/044a2fd8-79b8-4d7b-8ccf-09e31f6ccec5)|![Image](https://github.com/user-attachments/assets/c9c071d5-f407-430d-817a-4c586f701aeb)|
+|result||||||
+|model name|P|Q|R|S|T|
+|feature||||||
+|val loss|![Image](https://github.com/user-attachments/assets/ef1c948a-383b-40d0-900a-be4f163b3c9b)|![Image](https://github.com/user-attachments/assets/49d357ed-3aa7-4930-a044-8c2ea6860700)|![Image](https://github.com/user-attachments/assets/5ec0f562-f645-41ef-b866-622c399c5d3e)|![Image](https://github.com/user-attachments/assets/73ab3b16-5964-4401-a565-b981563bcbfe)|![Image](https://github.com/user-attachments/assets/59b81288-9da0-4e20-9b34-a818a018db47)|
+|result||||||
+|model name|U|V|W|X|Y|
+|feature||||||
+|val loss|![Image](https://github.com/user-attachments/assets/3b1016c0-c9e2-43bb-bb58-19dcba555812)|![Image](https://github.com/user-attachments/assets/be389cb8-70ec-4315-bb1f-980d5d9d91a0)|![Image](https://github.com/user-attachments/assets/13840fec-c408-4997-ad1a-244af4a36dfd)|![Image](https://github.com/user-attachments/assets/2a7e3240-37fa-466f-9a58-8b7dccaa67c2)|![Image](https://github.com/user-attachments/assets/ce3cecb4-3064-4621-8ee8-8b18243af2c4)|
+|result||||||
+|model name|Z|AA|AB|AC|AD|
+|feature||||||
+|val loss|![Image](https://github.com/user-attachments/assets/43c91944-2c0b-45b2-9b01-fe9156c32a60)|![Image](https://github.com/user-attachments/assets/a7a7dd91-3cce-47c1-8e46-4e724822bf22)|![Image](https://github.com/user-attachments/assets/3a86c501-1fab-4782-9159-097e57bc7d20)|![Image](https://github.com/user-attachments/assets/e9a1b41c-06bc-41d8-986d-6177c6608650)|![Image](https://github.com/user-attachments/assets/10e9df58-fd60-4c86-9afa-c1b945e6f636)|
+|result||||||
 
 
 
