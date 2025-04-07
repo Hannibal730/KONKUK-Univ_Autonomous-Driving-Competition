@@ -530,11 +530,11 @@ flowchart TD
   </tr>
   <tr>
     <td>val loss</td>
-    <td><img src="https://github.com/user-attachments/assets/589c132d-d5d1-4488-b7a0-1e5221cf01ce" width="400" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a" width="400" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b" width="400" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/4da19af9-155e-4350-8d7b-f37b35c36cba" width="400" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145" width="400" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/589c132d-d5d1-4488-b7a0-1e5221cf01ce" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/4da19af9-155e-4350-8d7b-f37b35c36cba" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145" width="100" alt="Image"></td>
   </tr>
   <tr>
     <td>feature</td>
