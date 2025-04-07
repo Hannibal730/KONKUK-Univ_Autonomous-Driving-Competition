@@ -582,7 +582,7 @@ flowchart TD
   </tr>  
   <tr>
     <td>feature</td>
-    <td> </td>
+    <td> resnet18을 전이학습에 사용 </td>
     <td> AD에서 전이학습으로 사용했던 resnet18을 resnet34로 교체 </td>
 
 
