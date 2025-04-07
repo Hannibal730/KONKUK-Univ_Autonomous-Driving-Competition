@@ -416,11 +416,11 @@ flowchart TD
   </tr>
   <tr>
     <td>final val loss, acc</td>
-    <td> Final Val Loss: 0.4497 - Final Val Acc: 0.8102</td>
-    <td> Final Val Loss: 0.4548 - Final Val Acc: 0.8061</td>
-    <td> Final Val Loss: 0.4725 - Final Val Acc: 0.8032</td>
-    <td> Final Val Loss: 0.5032 - Final Val Acc: 0.7979</td>
-    <td> Final Val Loss: 0.4568 - Final Val Acc: 0.8002</td>
+    <td>  0.4497 <br> 0.8102</td>
+    <td>  0.4548 <br> 0.8061</td>
+    <td>  0.4725 <br> 0.8032</td>
+    <td>  0.5032 <br> 0.7979</td>
+    <td>  0.4568 <br> 0.8002</td>
   </tr>
   <tr>
     <td>evaluation</td>
