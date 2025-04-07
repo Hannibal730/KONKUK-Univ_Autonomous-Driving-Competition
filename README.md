@@ -285,9 +285,9 @@ flowchart TD
 ---
 
 
+
 # 페이션트 에포크 수정 필요
-# 페이션트 에포크 수정 필요
-<table style="width:100%; table-layout: fixed;">
+<table style="width:100%; table-layout: fixed; font-size:10px;">
   <colgroup>
     <col style="width:16.66%;">
     <col style="width:16.66%;">
