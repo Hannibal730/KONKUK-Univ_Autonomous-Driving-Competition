@@ -573,26 +573,24 @@ flowchart TD
     <td>val acc <br> train acc</td>
     <td><img src="https://github.com/user-attachments/assets/3f0845f0-86f4-4fa8-83d7-9e41fec47128" width="300" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/1342a43a-cc9b-432b-acd1-84fe4548cd7f" width="300" alt="Image"></td>
-
   </tr>  
   <tr>
     <td>feature</td>
     <td> AC의 스케줄러에서 min_lr을 1e-5에서 1e-6으로 수정</td>
     <td> AD에서 전이학습으로 사용했던 resnet18을 resnet34로 교체 </td>
-
-
   </tr>
   <tr>
     <td>final val loss, acc</td>
     <td> 0.4319 <br> 0.8102 </td>
     <td>  0.4318 <br> 0.7996  </td>
-
-
   </tr>
   <tr>
     <td>evaluation</td>
     <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
     <td> val loss와 val acc 모두 AD보다 진동이 적다. 이처럼 안정적으로 학습한 모델이 실전에서 더욱 일관된 결과를 출력하기 때문에 AE를 최종 모델로 선정했다.</td>
-
+  </tr>
+  <tr>
+    <tr>![Image](https://github.com/user-attachments/assets/a75df783-84a8-498c-b7fc-edf29c070517)</tr>
+    <tr>![Image](https://github.com/user-attachments/assets/f84f6ff2-c9ab-45d3-9693-a9662a91630f)</tr>
   </tr>
 </table>
