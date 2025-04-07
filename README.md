@@ -305,7 +305,7 @@ flowchart TD
     <td>E</td>
   </tr>
   <tr>
-    <td>val loss</td>
+    <td>val loss <br> train loss</td>
     <td><img src="https://github.com/user-attachments/assets/d9e70ee2-11a5-4b84-a51f-55c66799dd19" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/42b96fb1-ffcf-4977-9d26-932107a89f54" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/3eb32289-843e-4338-bd0b-a73ccfcc4b2f" width="100" alt="Image"></td>
@@ -356,7 +356,7 @@ flowchart TD
     <td>J</td>
   </tr>
   <tr>
-    <td>val loss</td>
+    <td>val loss <br> train loss</td>
     <td><img src="https://github.com/user-attachments/assets/8c90e538-a6ab-48a3-8a32-fcdd4b0ac3d4" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/66f606af-a45a-4f1f-88fa-4bf2ded49754" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/1d6ef29f-3c68-4d0c-8e57-c78089e52c3e" width="100" alt="Image"></td>
@@ -399,7 +399,7 @@ flowchart TD
     <td> O</td>
   </tr>
   <tr>
-    <td>val loss</td>
+    <td>val loss <br> train loss</td>
     <td><img src="https://github.com/user-attachments/assets/77e8422e-d539-4056-8c21-0b622057d26f" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/36eb7bbc-3f9c-4c07-af5b-d8ec66c5171c" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/c090c0e2-3730-431a-94a6-75d4054d85d8" width="100" alt="Image"></td>
@@ -442,7 +442,7 @@ flowchart TD
     <td> T</td>
   </tr>
   <tr>
-    <td>val loss</td>
+    <td>val loss <br> train loss</td>
     <td><img src="https://github.com/user-attachments/assets/1efdd7d9-72b8-4912-9fec-713bf662cfb3" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/ea2e9e99-e048-41c4-8201-03fb9e198c41" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/280531b4-36d0-4a62-baa2-55edfb3b3862" width="100" alt="Image"></td>
@@ -486,7 +486,7 @@ flowchart TD
   </tr>
 
   <tr>
-    <td>val loss</td>
+    <td>val loss <br> train loss</td>
     <td><img src="https://github.com/user-attachments/assets/8b01b1bb-c3d9-480f-8192-52e107cf4070" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/fd9819be-36d5-4053-92ee-2fb8045e55d3" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/3c1a0731-8b9c-482b-98b4-e68234ae28ff" width="100" alt="Image"></td>
@@ -529,7 +529,7 @@ flowchart TD
     <td> AD</td>
   </tr>
   <tr>
-    <td>val loss</td>
+    <td>val loss <br> train loss</td>
     <td><img src="https://github.com/user-attachments/assets/589c132d-d5d1-4488-b7a0-1e5221cf01ce" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b" width="100" alt="Image"></td>
@@ -560,5 +560,47 @@ flowchart TD
     <td>AB처럼 train loss감소가 느려지고, val loss는 변화가 적다. 하지만 AA와 AB에 비해서 final val loss가 작기 때문에 AC의 FC층을 채택했다. </td>
     <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
   </tr>
+</table>
 
+<table style="width:100%; table-layout: fixed; font-size:5px;">  
+  <tr>
+    <td>model name</td>
+    <td> AD</td>
+    <td> AE</td>
+  </tr>
+  <tr>
+    <td>val loss <br> train loss</td>
+    <td><img src="https://github.com/user-attachments/assets/e91a6104-99b7-4809-b6de-13b9951375d5" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/253c631f-cd69-496a-bb23-b6cf9705983f" width="100" alt="Image"></td>
+
+  </tr>
+  <tr>
+    <td>val acc <br> train acc</td>
+    <td><img src="https://github.com/user-attachments/assets/3f0845f0-86f4-4fa8-83d7-9e41fec47128" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/1342a43a-cc9b-432b-acd1-84fe4548cd7f" width="100" alt="Image"></td>
+
+  </tr>  
+  <tr>
+    <td>feature</td>
+    <td> </td>
+    <td> </td>
+
+
+  </tr>
+  <tr>
+    <td>final val loss, acc</td>
+    <td> 0.4439 <br> 0.8049 </td>
+    <td>  0.4452 <br> 0.8037</td>
+    <td>  0.4461 <br> 0.8049</td>
+    <td> 0.4444 <br> 0.8067 </td>
+    <td>  0.4319 <br> 0.8102</td>
+  </tr>
+  <tr>
+    <td>evaluation</td>
+    <td> V와 Y보다 final val loss가 낮다. 따라서 평행이동 10%에서 5%로의 수정, L2정규화 가중치 1e-4에서 1e-3으로의 수정 모두 성능 개선에 기여한다고 판단했다. </td>
+    <td> min_lr이 감소하자 val loss의 진동이 줄어들었고, 더욱 안정적인 학습이 가능해졌다고 판단했다.</td>
+    <td> FC층이 추가되자 train loss의 감소가 느려졌고, val loss는 변화가 적다.</td>
+    <td>AB처럼 train loss감소가 느려지고, val loss는 변화가 적다. 하지만 AA와 AB에 비해서 final val loss가 작기 때문에 AC의 FC층을 채택했다. </td>
+    <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
+  </tr>
 </table>
