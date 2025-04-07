@@ -10,6 +10,7 @@
 <br>
 
 # 자율주행 딥러닝 모델
+---
 <br>
 
 ## 1. 서론 (Introduction)
@@ -221,10 +222,10 @@ flowchart TD
 
 |model name|A|B|C|D|E|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|feature	초기 설계 모델. SGD (lr=5*1e-3	|	A에 스케줄러(0.5배) 추가. min_lr=1e-6	|	B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가	|	C의 배치 사이즈를 128에서 256으로 수정	|	D의 배치 사이즈를 256에서 512으로 수정|
+|feature|	초기 설계 모델. SGD (lr=5*1e-3	|	A에 스케줄러(0.5배) 추가. min_lr=1e-6	|	B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가	|	C의 배치 사이즈를 128에서 256으로 수정	|	D의 배치 사이즈를 256에서 512으로 수정|
 |val loss|![Image](https://github.com/user-attachments/assets/c3576f7f-ec99-49de-8e85-1ab2f5c5ea8e)|![Image](https://github.com/user-attachments/assets/b5c82881-c747-4dac-971c-2b28b217ca55)|![Image](https://github.com/user-attachments/assets/25129819-f665-46da-ba8b-cb1020751454)|![Image](https://github.com/user-attachments/assets/c081ffa6-8505-40ef-b466-5be5281d37b5)|![Image](https://github.com/user-attachments/assets/55edc841-b98f-46ba-85fa-498c7ff54b0f)|
 |final val loss/acc||||||
-|result|val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.|스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함.|이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.	|	배치 사이즈를 증가시키면 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변다.|	D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.|	
+|result|<small>val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.</small>|스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함.|이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.	|	배치 사이즈를 증가시키면 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변다.|	D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.|	
 |model name|F|G|H|I|J|
 |feature|	E의 FC 층에 드롭아웃 (0.5) 추가|E의 FC 층에 드롭아웃 (0.8) 추가|G에 L2 정규화 (1e-3) 추가|G에 L2 정규화 (1e-4) 추가|H에 데이터 증강 (RandomRotation 20) 추가|
 |val loss|![Image](https://github.com/user-attachments/assets/912684d8-a1e9-4adf-99c4-4477c633e6fc)|![Image](https://github.com/user-attachments/assets/7d045543-033e-4222-8a6c-27cc9450006c)|![Image](https://github.com/user-attachments/assets/c826b9c0-e07a-47bb-ae3e-958fc485e993)|![Image](https://github.com/user-attachments/assets/0c7f288f-0ba2-4aa8-89a6-2f026398ec1d)|![Image](https://github.com/user-attachments/assets/fca806ee-93e9-4378-a196-d7dfed50bda0)|
