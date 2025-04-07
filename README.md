@@ -370,11 +370,20 @@ flowchart TD
   </tr>
     <tr>
     <td>evaluation</td>
-    <td> val loss를 더 줄이기 위해 드롭아웃을 0.5비율로 추가했지만 성능 차이가 크지 않았다. 비율을 늘릴 필요가 있어보인다.</td>
+    <td> val loss를 더 줄이기 위해 드롭아웃을 0.5비율로 추가했지만 성능 차이가 크지 않았다. 드롭아웃 비율을 늘릴 필요가 있어보인다.</td>
     <td> F보다 val loss가 더 빠르게 수렴한다. F보다 성능도 향상됐다.</td>
     <td>val loss를 더 줄이기 위해 L2 정규화를 1e-3 가중치로 추가했지만, 추가 이전과 성능 차이가 크지 않았다. 가중치를 증가시킬 필요가 있어보인다.</td>
     <td>L2 정규화 가중치를 1e-3에서 1e-2로 감소시켰지만, 감소 이전과 성능 차이가 크지 않았다. H를 유지하기로 결정했다. </td>
     <td>val data와 train data의 차이가 커진 탓에 val loss의 수렴속도가 느려진 것으로 해석했다.</td>
+  </tr>
+    </tr>
+    <tr>
+    <td>model name</td>
+    <td> K</td>
+    <td> L</td>
+    <td> M</td>
+    <td> N</td>
+    <td> O</td>
   </tr>
   <tr>
     <td>val loss</td>
@@ -385,6 +394,38 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/a7e6b7a1-67d3-43bf-b483-a6e7e8124bc8" width="100" alt="Image"></td>
   </tr>
   <tr>
+    <td>feature</td>
+    <td> J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-3 유지</td>
+    <td> J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-4로 수정</td>
+    <td> J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-2로 수정</td>
+    <td> L에서 lr을 5*1e-3에서 5*1e-2로 수정</td>
+    <td> L에서 lr을 5*1e-3에서 1*1e-3으로 수정</td>
+  </tr>
+  <tr>
+    <td>final val loss, acc</td>
+    <td> Final Val Loss: 0.4497 - Final Val Acc: 0.8102</td>
+    <td> Final Val Loss: 0.4548 - Final Val Acc: 0.8061</td>
+    <td> Final Val Loss: 0.4725 - Final Val Acc: 0.8032</td>
+    <td> Final Val Loss: 0.5032 - Final Val Acc: 0.7979</td>
+    <td> Final Val Loss: 0.4568 - Final Val Acc: 0.8002</td>
+  </tr>
+  <tr>
+    <td>evaluation</td>
+    <td> epoch 10 부근에서 val loss가 반등하는 오버피팅 문제가 발생했다.</td>
+    <td> K보다 final val loss가 작다.</td>
+    <td> L보다 final val loss가 크다.</td>
+    <td> L보다 final val loss가 크다.</td>
+    <td> L과 final loss가 비슷한 양상을 보인다. 성능개선에 한계를 느껴서 전이학습에서 파인튜닝을 시도하기로 결정했다.</td>
+  </tr>
+  <tr>
+    <td>model name</td>
+    <td> P</td>
+    <td> Q</td>
+    <td> R</td>
+    <td> S</td>
+    <td> T</td>
+  </tr>
+  <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/1efdd7d9-72b8-4912-9fec-713bf662cfb3" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/ea2e9e99-e048-41c4-8201-03fb9e198c41" width="100" alt="Image"></td>
@@ -392,6 +433,39 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/7a924bff-6d41-4b27-8249-163385c7d834" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/0449efce-1422-4c27-ba3f-24a1f6bde2b3" width="100" alt="Image"></td>
   </tr>
+  <tr>
+    <td>feature</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>final val loss, acc</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>evaluation</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>model name</td>
+    <td> U</td>
+    <td> V</td>
+    <td> W</td>
+    <td> X</td>
+    <td> Y</td>
+  </tr>
+
   <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/8b01b1bb-c3d9-480f-8192-52e107cf4070" width="100" alt="Image"></td>
@@ -401,20 +475,22 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/ddbe9657-3d0a-434d-a264-02512c303618" width="100" alt="Image"></td>
   </tr>
   <tr>
-    <td>val loss</td>
-    <td><img src="https://github.com/user-attachments/assets/589c132d-d5d1-4488-b7a0-1e5221cf01ce" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/4da19af9-155e-4350-8d7b-f37b35c36cba" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145" width="100" alt="Image"></td>
+    <td>feature</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
-</table>
-
-
-
-
+  <tr>
+    <td>final val loss, acc</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
   </tr>
-    <tr>
+  <tr>
     <td>evaluation</td>
     <td> </td>
     <td> </td>
@@ -422,3 +498,45 @@ flowchart TD
     <td> </td>
     <td> </td>
   </tr>
+  <tr>
+    <td>model name</td>
+    <td> Z</td>
+    <td> AA</td>
+    <td> AB</td>
+    <td> AC</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>val loss</td>
+    <td><img src="https://github.com/user-attachments/assets/589c132d-d5d1-4488-b7a0-1e5221cf01ce" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/4da19af9-155e-4350-8d7b-f37b35c36cba" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145" width="100" alt="Image"></td>
+  </tr>
+  <tr>
+    <td>feature</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>final val loss, acc</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>evaluation</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+
+</table>
