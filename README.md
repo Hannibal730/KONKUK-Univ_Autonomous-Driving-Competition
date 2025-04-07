@@ -335,6 +335,7 @@ flowchart TD
     <td> a </td>
     <td> a </td>
     <td> a </td>
+  </tr>
   <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/77e8422e-d539-4056-8c21-0b622057d26f" width="100" alt="Image"></td>
