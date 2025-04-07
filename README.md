@@ -583,24 +583,21 @@ flowchart TD
   <tr>
     <td>feature</td>
     <td> </td>
-    <td> </td>
+    <td> AD에서 전이학습으로 사용했던 resnet18을 resnet34로 교체 </td>
 
 
   </tr>
   <tr>
     <td>final val loss, acc</td>
-    <td> 0.4439 <br> 0.8049 </td>
-    <td>  0.4452 <br> 0.8037</td>
-    <td>  0.4461 <br> 0.8049</td>
-    <td> 0.4444 <br> 0.8067 </td>
-    <td>  0.4319 <br> 0.8102</td>
+    <td> 0.4319 <br> 0.8102 </td>
+    <td>  0.4318 <br> 0.7996  </td>
+
+
   </tr>
   <tr>
     <td>evaluation</td>
-    <td> V와 Y보다 final val loss가 낮다. 따라서 평행이동 10%에서 5%로의 수정, L2정규화 가중치 1e-4에서 1e-3으로의 수정 모두 성능 개선에 기여한다고 판단했다. </td>
-    <td> min_lr이 감소하자 val loss의 진동이 줄어들었고, 더욱 안정적인 학습이 가능해졌다고 판단했다.</td>
-    <td> FC층이 추가되자 train loss의 감소가 느려졌고, val loss는 변화가 적다.</td>
-    <td>AB처럼 train loss감소가 느려지고, val loss는 변화가 적다. 하지만 AA와 AB에 비해서 final val loss가 작기 때문에 AC의 FC층을 채택했다. </td>
-    <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
+    <td>  </td>
+    <td> val loss와 val acc 모두 AD보다 진동이 적다. 이처럼 안정적으로 학습한 모델이 실전에서 더욱 일관된 결과를 출력하기 때문에 AE를 최종 모델로 선정했다.</td>
+
   </tr>
 </table>
