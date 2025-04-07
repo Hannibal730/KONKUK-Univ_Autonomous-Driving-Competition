@@ -526,7 +526,6 @@ flowchart TD
     <td> AA</td>
     <td> AB</td>
     <td> AC</td>
-    <td> AD</td>
   </tr>
   <tr>
     <td>val loss <br> train loss</td>
@@ -534,7 +533,6 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/4da19af9-155e-4350-8d7b-f37b35c36cba" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145" width="100" alt="Image"></td>
   </tr>
   <tr>
     <td>feature</td>
@@ -542,7 +540,6 @@ flowchart TD
     <td> Z의 스케줄러의 min_lr을 1e-4에서 1e-5로 수정</td>
     <td>AA의 FC층에 64개의 노드를 가진 층을 추가하고, 배치 정규화도 추가 </td>
     <td>AA의 FC층에 32개의 노드를 가진 층을 추가하고, 배치 정규화도 추가 </td>
-    <td> AC의 스케줄러에서 min_lr을 1e-5에서 1e-6으로 수정</td>
   </tr>
   <tr>
     <td>final val loss, acc</td>
@@ -550,7 +547,6 @@ flowchart TD
     <td>  0.4452 <br> 0.8037</td>
     <td>  0.4461 <br> 0.8049</td>
     <td> 0.4444 <br> 0.8067 </td>
-    <td>  0.4319 <br> 0.8102</td>
   </tr>
   <tr>
     <td>evaluation</td>
@@ -558,7 +554,6 @@ flowchart TD
     <td> min_lr이 감소하자 val loss의 진동이 줄어들었고, 더욱 안정적인 학습이 가능해졌다고 판단했다.</td>
     <td> FC층이 추가되자 train loss의 감소가 느려졌고, val loss는 변화가 적다.</td>
     <td>AB처럼 train loss감소가 느려지고, val loss는 변화가 적다. 하지만 AA와 AB에 비해서 final val loss가 작기 때문에 AC의 FC층을 채택했다. </td>
-    <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
   </tr>
 </table>
 
@@ -582,7 +577,7 @@ flowchart TD
   </tr>  
   <tr>
     <td>feature</td>
-    <td> resnet18을 전이학습에 사용 </td>
+    <td> AC의 스케줄러에서 min_lr을 1e-5에서 1e-6으로 수정</td>
     <td> AD에서 전이학습으로 사용했던 resnet18을 resnet34로 교체 </td>
 
 
@@ -596,7 +591,7 @@ flowchart TD
   </tr>
   <tr>
     <td>evaluation</td>
-    <td>  </td>
+    <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
     <td> val loss와 val acc 모두 AD보다 진동이 적다. 이처럼 안정적으로 학습한 모델이 실전에서 더욱 일관된 결과를 출력하기 때문에 AE를 최종 모델로 선정했다.</td>
 
   </tr>
