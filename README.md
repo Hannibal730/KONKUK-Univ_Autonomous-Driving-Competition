@@ -321,6 +321,23 @@ flowchart TD
     <td>D의 배치 사이즈를 256에서 512으로 수정</td>
   </tr>
   <tr>
+    <td>final val loss, acc</td>
+    <td>Final Val Loss: 0.4735 - Final Val Acc: 0.7961</td>
+    <td>Final Val Loss: 0.4833 - Final Val Acc: 0.7950</td>
+    <td>Final Val Loss: 0.4744 - Final Val Acc: 0.8020</td>
+    <td>Final Val Loss: 0.4887 - Final Val Acc: 0.7903</td>
+    <td>Final Val Loss: 0.4939 - Final Val Acc: 0.7897</td>
+  </tr>
+  <tr>
+    <td>result</td>
+    <td>val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.</td>
+    <td>스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함</td>
+    <td>이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.</td>
+    <td>배치 사이즈를 증가시키니 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변한다.</td>
+    <td>D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.</td>
+  </tr>
+
+  <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/8c90e538-a6ab-48a3-8a32-fcdd4b0ac3d4" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/66f606af-a45a-4f1f-88fa-4bf2ded49754" width="100" alt="Image"></td>
