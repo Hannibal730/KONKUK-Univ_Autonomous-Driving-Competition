@@ -223,33 +223,32 @@ flowchart TD
 |model name|A|B|C|D|E|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |feature|	초기 설계 모델. SGD (lr=5*1e-3	|	A에 스케줄러(0.5배) 추가. min_lr=1e-6	|	B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가	|	C의 배치 사이즈를 128에서 256으로 수정	|	D의 배치 사이즈를 256에서 512으로 수정|
-|val loss|![Image](https://github.com/user-attachments/assets/42b96fb1-ffcf-4977-9d26-932107a89f54)|![Image](https://github.com/user-attachments/assets/dae25044-19d4-4ae0-8f81-205bd164022a)|![Image](https://github.com/user-attachments/assets/e5cfb819-dcaa-4647-8651-5f85a1e9cc68)|![Image](https://github.com/user-attachments/assets/a39b15ce-cb21-44c4-9666-df87102ee909)|![Image](https://github.com/user-attachments/assets/8c90e538-a6ab-48a3-8a32-fcdd4b0ac3d4)|
+|val loss|![Image](https://github.com/user-attachments/assets/c3576f7f-ec99-49de-8e85-1ab2f5c5ea8e)|![Image](https://github.com/user-attachments/assets/b5c82881-c747-4dac-971c-2b28b217ca55)|![Image](https://github.com/user-attachments/assets/25129819-f665-46da-ba8b-cb1020751454)|![Image](https://github.com/user-attachments/assets/c081ffa6-8505-40ef-b466-5be5281d37b5)|![Image](https://github.com/user-attachments/assets/55edc841-b98f-46ba-85fa-498c7ff54b0f)|
 |final val loss/acc||||||
-|result|<small>val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.</small>|<small>스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함.</small>|<small>이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.</small>|<small>배치 사이즈를 증가시키면 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변다.</small>|<small>D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.</small>|	
+|result|<small>val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.</small>|<small>스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함.</small>|<small>이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.|<small>배치 사이즈를 증가시키면 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변다.|<small>D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.|	
 |model name|F|G|H|I|J|
 |feature|	E의 FC 층에 드롭아웃 (0.5) 추가|E의 FC 층에 드롭아웃 (0.8) 추가|G에 L2 정규화 (1e-3) 추가|G에 L2 정규화 (1e-4) 추가|H에 데이터 증강 (RandomRotation 20) 추가|
-|val loss|![Image](https://github.com/user-attachments/assets/66f606af-a45a-4f1f-88fa-4bf2ded49754)|![Image](https://github.com/user-attachments/assets/1d6ef29f-3c68-4d0c-8e57-c78089e52c3e)|![Image](https://github.com/user-attachments/assets/b85ceae6-f90b-4f79-85c1-faf9bb86aebb)|![Image](https://github.com/user-attachments/assets/0061e33c-0ba2-4945-bfbb-0af0b14d8e5c)|![Image](https://github.com/user-attachments/assets/77e8422e-d539-4056-8c21-0b622057d26f)|
+|val loss|![Image](https://github.com/user-attachments/assets/912684d8-a1e9-4adf-99c4-4477c633e6fc)|![Image](https://github.com/user-attachments/assets/7d045543-033e-4222-8a6c-27cc9450006c)|![Image](https://github.com/user-attachments/assets/c826b9c0-e07a-47bb-ae3e-958fc485e993)|![Image](https://github.com/user-attachments/assets/0c7f288f-0ba2-4aa8-89a6-2f026398ec1d)|![Image](https://github.com/user-attachments/assets/fca806ee-93e9-4378-a196-d7dfed50bda0)|
 |final val loss/acc||||||
 |result|val loss를 더 줄이기 위해 드롭아웃을 0.5비율로 추가했지만, 추가 이전과 성능 차이가 크지 않았다. 비율을 늘릴 필요가 있어보인다.|드롭아웃 비율이 0.5일 때보다 val loss가 더 빠르게 수렴한다. 성능도 향상됐다.|val loss를 더 줄이기 위해 L2 정규화를 1e-3 가중치로 추가했지만, 추가 이전과 성능 차이가 크지 않았다. 가중치를 증가시킬 필요가 있어보인다.|L2 정규화 가중치를 1e-3에서 1e-2로 감소시켰지만, 감소 이전과 성능 차이가 크지 않았다.H를 유지하기로 결정했다.|val data와 train data의 차이가 커진 탓에 val loss의 수렴속도가 느려진 것으로 해석했다.|
 |model name|K|L|M|N|O|
 |feature|J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-3 유지|J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-4로 수정|J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-2로 수정|L에서 lr을 5*1e-3에서 5*1e-2로 수정|L에서 lr을 5*1e-3에서 1*1e-3으로 수정|
-|val loss|![Image](https://github.com/user-attachments/assets/36eb7bbc-3f9c-4c07-af5b-d8ec66c5171c)|![Image](https://github.com/user-attachments/assets/c090c0e2-3730-431a-94a6-75d4054d85d8)|![Image](https://github.com/user-attachments/assets/75e04442-2e87-4254-bf00-2ae68798ea47)|![Image](https://github.com/user-attachments/assets/a7e6b7a1-67d3-43bf-b483-a6e7e8124bc8)|![Image](https://github.com/user-attachments/assets/1efdd7d9-72b8-4912-9fec-713bf662cfb3)|
+|val loss|![Image](https://github.com/user-attachments/assets/da966e73-111d-47de-80ed-bbdbf2b25b06)|![Image](https://github.com/user-attachments/assets/d081e5ba-6e3b-45af-8fb4-fd0e485edab0)|![Image](https://github.com/user-attachments/assets/1370e4f4-82e9-4124-a530-03111bce1070)|![Image](https://github.com/user-attachments/assets/044a2fd8-79b8-4d7b-8ccf-09e31f6ccec5)|![Image](https://github.com/user-attachments/assets/c9c071d5-f407-430d-817a-4c586f701aeb)|
 |final val loss/acc||||||
 |result||||||
 |model name|P|Q|R|S|T|
 |feature||||||
-|val loss|![Image](https://github.com/user-attachments/assets/ea2e9e99-e048-41c4-8201-03fb9e198c41)|![Image](https://github.com/user-attachments/assets/280531b4-36d0-4a62-baa2-55edfb3b3862)|![Image](https://github.com/user-attachments/assets/7a924bff-6d41-4b27-8249-163385c7d834)|![Image](https://github.com/user-attachments/assets/0449efce-1422-4c27-ba3f-24a1f6bde2b3)|![Image](https://github.com/user-attachments/assets/8b01b1bb-c3d9-480f-8192-52e107cf4070)|
+|val loss|![Image](https://github.com/user-attachments/assets/ef1c948a-383b-40d0-900a-be4f163b3c9b)|![Image](https://github.com/user-attachments/assets/49d357ed-3aa7-4930-a044-8c2ea6860700)|![Image](https://github.com/user-attachments/assets/5ec0f562-f645-41ef-b866-622c399c5d3e)|![Image](https://github.com/user-attachments/assets/73ab3b16-5964-4401-a565-b981563bcbfe)|![Image](https://github.com/user-attachments/assets/59b81288-9da0-4e20-9b34-a818a018db47)|
 |final val loss/acc||||||
 |result||||||
 |model name|U|V|W|X|Y|
 |feature||||||
-|val loss|![Image](https://github.com/user-attachments/assets/fd9819be-36d5-4053-92ee-2fb8045e55d3)|![Image](https://github.com/user-attachments/assets/3c1a0731-8b9c-482b-98b4-e68234ae28ff)|![Image](https://github.com/user-attachments/assets/96dc0f23-276c-41f4-918c-2237ea2d886a)|![Image](https://github.com/user-attachments/assets/ddbe9657-3d0a-434d-a264-02512c303618)|![Image](https://github.com/user-attachments/assets/589c132d-d5d1-4488-b7a0-1e5221cf01ce)|
+|val loss|![Image](https://github.com/user-attachments/assets/3b1016c0-c9e2-43bb-bb58-19dcba555812)|![Image](https://github.com/user-attachments/assets/be389cb8-70ec-4315-bb1f-980d5d9d91a0)|![Image](https://github.com/user-attachments/assets/13840fec-c408-4997-ad1a-244af4a36dfd)|![Image](https://github.com/user-attachments/assets/2a7e3240-37fa-466f-9a58-8b7dccaa67c2)|![Image](https://github.com/user-attachments/assets/ce3cecb4-3064-4621-8ee8-8b18243af2c4)|
 |final val loss/acc||||||
 |result||||||
 |model name|Z|AA|AB|AC|AD|
 |feature||||||
-|val loss|![Image](https://github.com/user-attachments/assets/533c0aa4-5dcd-4430-8ce9-35b426a9ef6a)|![Image](https://github.com/user-attachments/assets/e8ece524-0b89-4d14-bfe6-c011314e204b)|![Image](https://github.com/user-attachments/assets/4da19af9-155e-4350-8d7b-f37b35c36cba)|![Image](https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145)|![Image](https://github.com/user-attachments/assets/d9e70ee2-11a5-4b84-a51f-55c66799dd19)|
-
+|val loss|![Image](https://github.com/user-attachments/assets/43c91944-2c0b-45b2-9b01-fe9156c32a60)|![Image](https://github.com/user-attachments/assets/a7a7dd91-3cce-47c1-8e46-4e724822bf22)|![Image](https://github.com/user-attachments/assets/3a86c501-1fab-4782-9159-097e57bc7d20)|![Image](https://github.com/user-attachments/assets/e9a1b41c-06bc-41d8-986d-6177c6608650)|![Image](https://github.com/user-attachments/assets/10e9df58-fd60-4c86-9afa-c1b945e6f636)|
 |final val loss/acc||||||
 |result||||||
 
