@@ -321,12 +321,12 @@ flowchart TD
     <td>D의 배치 사이즈를 256에서 512으로 수정</td>
   </tr>
   <tr>
-    <td>Final Val Loss <br> Final Val Acc</td>
-    <td>Final Val Loss: 0.4735 - Final Val Acc: 0.7961</td>
-    <td>Final Val Loss: 0.4833 - Final Val Acc: 0.7950</td>
-    <td>Final Val Loss: 0.4744 - Final Val Acc: 0.8020</td>
-    <td>Final Val Loss: 0.4887 - Final Val Acc: 0.7903</td>
-    <td>Final Val Loss: 0.4939 - Final Val Acc: 0.7897</td>
+    <td>final val loss / acc</td>
+    <td>0.4735 / 0.7961</td>
+    <td>0.4833 / 0.7950</td>
+    <td>0.4744 / 0.8020</td>
+    <td>0.4887 / 0.7903</td>
+    <td>0.4939 / 0.7897</td>
   </tr>
   <tr>
     <td>result</td>
