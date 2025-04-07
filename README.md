@@ -336,6 +336,17 @@ flowchart TD
     <td>배치 사이즈를 증가시키니 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변한다.</td>
     <td>D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.</td>
   </tr>
+</table>
+
+<table style="width:100%; table-layout: fixed; font-size:5px;">
+  <colgroup>
+    <col style="width:16.66%;">
+    <col style="width:16.66%;">
+    <col style="width:16.66%;">
+    <col style="width:16.66%;">
+    <col style="width:16.66%;">
+    <col style="width:16.66%;">
+  </colgroup>  
   <tr>
     <td>model name</td>
     <td>F</td>
