@@ -321,7 +321,7 @@ flowchart TD
     <td>D의 배치 사이즈를 256에서 512으로 수정</td>
   </tr>
   <tr>
-    <td>final val loss / acc</td>
+    <td>final val loss, acc</td>
     <td>0.4735 <br> 0.7961</td>
     <td>0.4833 <br> 0.7950</td>
     <td>0.4744 <br> 0.8020</td>
@@ -329,14 +329,21 @@ flowchart TD
     <td>0.4939 <br> 0.7897</td>
   </tr>
   <tr>
-    <td>result</td>
+    <td>evaluation</td>
     <td>val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.</td>
     <td>스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함</td>
-    <td>이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.</td>
+    <td>이제 train loss값은 0에 수렴한다. val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성 확보가 필요하다 판단했다.</td>
     <td>배치 사이즈를 증가시키니 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변한다.</td>
     <td>D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.</td>
   </tr>
-
+  <tr>
+    <td>model name</td>
+    <td>F</td>
+    <td>G</td>
+    <td>H</td>
+    <td>I</td>
+    <td>J</td>
+  </tr>
   <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/8c90e538-a6ab-48a3-8a32-fcdd4b0ac3d4" width="100" alt="Image"></td>
@@ -345,13 +352,29 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/b85ceae6-f90b-4f79-85c1-faf9bb86aebb" width="100" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/0061e33c-0ba2-4945-bfbb-0af0b14d8e5c" width="100" alt="Image"></td>
   </tr>
+    <tr>
+    <td>feature</td>
+    <td>E의 FC 층에 드롭아웃 (0.5) 추가</td>
+    <td>E의 FC 층에 드롭아웃 (0.8) 추가</td>
+    <td>G에 L2 정규화 (1e-3) 추가</td>
+    <td>G에 L2 정규화 (1e-2) 추가</td>
+    <td>H에 RandomRotation 10deg 추가</td>
+  </tr>
   <tr>
     <td> final val loss, acc </td>
-    <td> a </td>
-    <td> a </td>
-    <td> a </td>
-    <td> a </td>
-    <td> a </td>
+    <td> 0.5110 <br> 0.7873 </td>
+    <td> 0.4880 <br> 0.8002 </td>
+    <td> 0.4879 <br> 0.7985 </td>
+    <td> 0.4932 <br> 0.7967 </td>
+    <td> 0.4743 <br> 0.8020 </td>
+  </tr>
+    <tr>
+    <td>evaluation</td>
+    <td> val loss를 더 줄이기 위해 드롭아웃을 0.5비율로 추가했지만 성능 차이가 크지 않았다. 비율을 늘릴 필요가 있어보인다.</td>
+    <td> F보다 val loss가 더 빠르게 수렴한다. F보다 성능도 향상됐다.</td>
+    <td>val loss를 더 줄이기 위해 L2 정규화를 1e-3 가중치로 추가했지만, 추가 이전과 성능 차이가 크지 않았다. 가중치를 증가시킬 필요가 있어보인다.</td>
+    <td>L2 정규화 가중치를 1e-3에서 1e-2로 감소시켰지만, 감소 이전과 성능 차이가 크지 않았다. H를 유지하기로 결정했다. </td>
+    <td>val data와 train data의 차이가 커진 탓에 val loss의 수렴속도가 느려진 것으로 해석했다.</td>
   </tr>
   <tr>
     <td>val loss</td>
@@ -386,3 +409,16 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/b8097eef-193c-4092-825d-ab965ad27145" width="100" alt="Image"></td>
   </tr>
 </table>
+
+
+
+
+  </tr>
+    <tr>
+    <td>evaluation</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
