@@ -307,6 +307,14 @@ flowchart TD
     <td>D</td>
     <td>E</td>
   </tr>
+    <tr>
+    <td>feature</td>
+    <td>A</td>
+    <td>B</td>
+    <td>C</td>
+    <td>D</td>
+    <td>E</td>
+  </tr>
   <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/d9e70ee2-11a5-4b84-a51f-55c66799dd19" width="400" alt="Image"></td>
