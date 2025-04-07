@@ -570,14 +570,14 @@ flowchart TD
   </tr>
   <tr>
     <td>val loss <br> train loss</td>
-    <td><img src="https://github.com/user-attachments/assets/e91a6104-99b7-4809-b6de-13b9951375d5" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/253c631f-cd69-496a-bb23-b6cf9705983f" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/e91a6104-99b7-4809-b6de-13b9951375d5" width="300" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/253c631f-cd69-496a-bb23-b6cf9705983f" width="300" alt="Image"></td>
 
   </tr>
   <tr>
     <td>val acc <br> train acc</td>
-    <td><img src="https://github.com/user-attachments/assets/3f0845f0-86f4-4fa8-83d7-9e41fec47128" width="100" alt="Image"></td>
-    <td><img src="https://github.com/user-attachments/assets/1342a43a-cc9b-432b-acd1-84fe4548cd7f" width="100" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/3f0845f0-86f4-4fa8-83d7-9e41fec47128" width="300" alt="Image"></td>
+    <td><img src="https://github.com/user-attachments/assets/1342a43a-cc9b-432b-acd1-84fe4548cd7f" width="300" alt="Image"></td>
 
   </tr>  
   <tr>
