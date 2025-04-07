@@ -451,27 +451,27 @@ flowchart TD
   </tr>
   <tr>
     <td>feature</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> 전이학습 첫 시도. 드롭아웃(0.5), 배치 사이즈 64,  ADAM (lr=1e-3), L2정규화 가중치 1e-4, 스케줄러(0.1배, min_lr=1e-4)), RandomRotation 10deg </td>
+    <td>P의 RandomRotation 10deg 제거 </td>
+    <td> P의 RandomRotation 10deg 전에 RandomResizedCrop 0.8-1.0%을 추가</td>
+    <td>R의 RandomRotation 10deg을 15deg으로 수정</td>
+    <td> S의 드롭아웃 비율을 0.5에서 0.6으로 수정</td>
   </tr>
   <tr>
     <td>final val loss, acc</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td>  0.4466 <br> 0.7985</td>
+    <td>  0.4549 <br> 0.8043</td>
+    <td> 0.4449 <br> 0.8131 </td>
+    <td>  0.4403 <br> 0.8002</td>
+    <td> 0.4420 <br> 0.8067 </td>
   </tr>
   <tr>
     <td>evaluation</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td>epoch 15부근에서 val loss가 0.45를 달성했다. 학습 속도가 훨씬 빨라졌다고 해석했다.</td>
+    <td> P보다 성능이 악화되었으므로 RandomRotation은 유지할 필요가 있어보인다.</td>
+    <td>P보다 일반화 성능이 향상되었다. RandomResizedCrop도 유지할 필요가 있어보인다. </td>
+    <td> R보다 final val loss가 감소한 점을 근거로 RandomRotation이 10일 때보다 15일 때가 일반화 정도가 높다고 판단했다.</td>
+    <td>S보다 val loss의 반등 양상이 감소한 점을 근거로 오버피팅이 더 억제 되었다고 판단했다. </td>
   </tr>
 </table>
 
@@ -495,27 +495,27 @@ flowchart TD
   </tr>
   <tr>
     <td>feature</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> T에 RandomAffine 평행이동 10% 추가. 데이터 증강 순서는 회전, 크롭, 평행이동</td>
+    <td>T에 RandomAffine 평행이동 10% 추가. 데이터 증강 순서는 회전, 평행이동, 크롭</td>
+    <td>V의 드롭아웃 비율을 0.6에서 0.7로 수정 </td>
+    <td> V의 RandomAffine 평행이동 10%를 20%로 수정</td>
+    <td>V의 L2정규화 가중치를 1e-4에서 1e-3으로 수정 </td>
   </tr>
   <tr>
     <td>final val loss, acc</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> 0.4571 <br> 0.8043 </td>
+    <td>  0.4477 <br> 0.7891</td>
+    <td>  0.4508 <br> 0.8061</td>
+    <td> 0.4568 <br> 0.8049 </td>
+    <td> 0.4540 <br> 0.8037 </td>
   </tr>
   <tr>
     <td>evaluation</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> 평행이동을 추가하고 final val loss가 증가했다. 따라서 데이터 증강의 순서를 바꿔서 다시 시도해보기로 함</td>
+    <td> 데이터 증강에서 크롭의 순서를 가장 마지막으로 설정하니 val loss가 감소하였다.</td>
+    <td> V에서 드롭아웃 비율 조정은 더 이상 일반화 성능개선에 영향을 못 미친다고 판단했다.</td>
+    <td> V에서 평행이동 비율 증가는 더 이상 일반화 성능개선에 영향을 못 미친다고 판단했다.</td>
+    <td> V의 L2정규화 가중치가 증가하자 train loss과 val loss의 간격이 감소했다. 일반화 성능이 증가하여 발생한 결과로 해석했다.</td>
   </tr>
 </table>
 
@@ -526,7 +526,7 @@ flowchart TD
     <td> AA</td>
     <td> AB</td>
     <td> AC</td>
-    <td> </td>
+    <td> AD</td>
   </tr>
   <tr>
     <td>val loss</td>
@@ -538,27 +538,27 @@ flowchart TD
   </tr>
   <tr>
     <td>feature</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td>Y에서 RandomAffine 평행이동 10%를 5%로 수정</td>
+    <td> Z의 스케줄러의 min_lr을 1e-4에서 1e-5로 수정</td>
+    <td>AA의 FC층에 64개의 노드를 가진 층을 추가하고, 배치 정규화도 추가 </td>
+    <td>AA의 FC층에 32개의 노드를 가진 층을 추가하고, 배치 정규화도 추가 </td>
+    <td> AC의 스케줄러에서 min_lr을 1e-5에서 1e-6으로 수정</td>
   </tr>
   <tr>
     <td>final val loss, acc</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> 0.4439 <br> 0.8049 </td>
+    <td>  0.4452 <br> 0.8037</td>
+    <td>  0.4461 <br> 0.8049</td>
+    <td> 0.4444 <br> 0.8067 </td>
+    <td>  0.4319 <br> 0.8102</td>
   </tr>
   <tr>
     <td>evaluation</td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
+    <td> V와 Y보다 final val loss가 낮다. 따라서 평행이동 10%에서 5%로의 수정, L2정규화 가중치 1e-4에서 1e-3으로의 수정 모두 성능 개선에 기여한다고 판단했다. </td>
+    <td> min_lr이 감소하자 val loss의 진동이 줄어들었고, 더욱 안정적인 학습이 가능해졌다고 판단했다.</td>
+    <td> FC층이 추가되자 train loss의 감소가 느려졌고, val loss는 변화가 적다.</td>
+    <td>AB처럼 train loss감소가 느려지고, val loss는 변화가 적다. 하지만 AA와 AB에 비해서 final val loss가 작기 때문에 AC의 FC층을 채택했다. </td>
+    <td>AC보다 val loss, final val loss 모두 낮은 모습을 보여준다. </td>
   </tr>
 
 </table>
