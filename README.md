@@ -379,7 +379,7 @@ flowchart TD
     <td> 0.4932 <br> 0.7967 </td>
     <td> 0.4743 <br> 0.8020 </td>
   </tr>
-    <tr>
+  <tr>
     <td>evaluation</td>
     <td> val loss를 더 줄이기 위해 드롭아웃을 0.5비율로 추가했지만 성능 차이가 크지 않았다. 드롭아웃 비율을 늘릴 필요가 있어보인다.</td>
     <td> F보다 val loss가 더 빠르게 수렴한다. F보다 성능도 향상됐다.</td>
@@ -387,8 +387,10 @@ flowchart TD
     <td>L2 정규화 가중치를 1e-3에서 1e-2로 감소시켰지만, 감소 이전과 성능 차이가 크지 않았다. H를 유지하기로 결정했다. </td>
     <td>val data와 train data의 차이가 커진 탓에 val loss의 수렴속도가 느려진 것으로 해석했다.</td>
   </tr>
-    </tr>
-    <tr>
+</table>
+
+<table style="width:100%; table-layout: fixed; font-size:5px;">
+  <tr>
     <td>model name</td>
     <td> K</td>
     <td> L</td>
@@ -428,6 +430,9 @@ flowchart TD
     <td> L보다 final val loss가 크다.</td>
     <td> L과 final loss가 비슷한 양상을 보인다. 성능개선에 한계를 느껴서 전이학습에서 파인튜닝을 시도하기로 결정했다.</td>
   </tr>
+</table>
+
+<table style="width:100%; table-layout: fixed; font-size:5px;">  
   <tr>
     <td>model name</td>
     <td> P</td>
@@ -468,6 +473,9 @@ flowchart TD
     <td> </td>
     <td> </td>
   </tr>
+</table>
+
+<table style="width:100%; table-layout: fixed; font-size:5px;">  
   <tr>
     <td>model name</td>
     <td> U</td>
@@ -509,6 +517,9 @@ flowchart TD
     <td> </td>
     <td> </td>
   </tr>
+</table>
+
+<table style="width:100%; table-layout: fixed; font-size:5px;">  
   <tr>
     <td>model name</td>
     <td> Z</td>
