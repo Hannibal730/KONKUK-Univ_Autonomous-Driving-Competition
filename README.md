@@ -1,9 +1,7 @@
-# 건국대학교 주관 행동모사 자율주행 경진대회에서 1등을 수상한 딥러닝 모델
+# 건국대학교 주관 행동모사 자율주행 경진대회
 
-
-- #### **대회명:** 건국대학교 주관 행동모사 자율주행 경진대회
 - #### **대회일:** 2024/06/27
-- #### **내용:** 카메라로 촬영한 주행데이터를 기반으로 자율주행 딥러닝 모델 개발하고, 모델을 탑재한 1/10 size 자율주행 경주를 진행
+- #### **내용:** 카메라로 촬영한 주행데이터를 기반으로 자율주행 딥러닝 모델을 개발하고, 모델을 탑재한 1/10 size 자율주행 경주를 진행
 - #### **주임교수:** 건국대학교 기계항공공학부 김창완
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 - #### **수상이력:** 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
@@ -221,28 +219,34 @@ flowchart TD
 
 |model name|A|B|C|D|E|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|feature	초기 설계 모델. SGD (lr=5*1e-3	|	A에 스케줄러(0.5배) 추가. min_lr=1e-6	|	B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가	|	C의 배치 사이즈를 128에서 256으로 수정	|	C의 배치 사이즈를 128에서 512으로 수정|
+|feature	초기 설계 모델. SGD (lr=5*1e-3	|	A에 스케줄러(0.5배) 추가. min_lr=1e-6	|	B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가	|	C의 배치 사이즈를 128에서 256으로 수정	|	D의 배치 사이즈를 256에서 512으로 수정|
 |val loss|![Image](https://github.com/user-attachments/assets/c3576f7f-ec99-49de-8e85-1ab2f5c5ea8e)|![Image](https://github.com/user-attachments/assets/b5c82881-c747-4dac-971c-2b28b217ca55)|![Image](https://github.com/user-attachments/assets/25129819-f665-46da-ba8b-cb1020751454)|![Image](https://github.com/user-attachments/assets/c081ffa6-8505-40ef-b466-5be5281d37b5)|![Image](https://github.com/user-attachments/assets/55edc841-b98f-46ba-85fa-498c7ff54b0f)|
-|	result	val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.	|	스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함	|	이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.	|	배치 사이즈를 증가시키면 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변다.	|	D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.	|	|
+|final val loss/acc||||||
+|result|val loss 값이 수렴하지 않고 진동하는 문제가 있다. 스케줄러 추가가 필요해보인다.|스케줄러 덕분에 val loss 값 진동 문제는 어느 정도 해결되었다. 하지만 train loss 값이 0에 수렴하지 않는 점을 근거로 모델의 깊이가 부족하다고 판단함.|이제 train loss값은 0에 수렴한다. 그리고 val loss는 epoch50 이전까지 크게 진동하다가 급격하게 0.6부근으로 수렴한다. 이처럼 val loss의 급격한 수렴현상의 원인은 스케줄러가 큰 진동 때문에 lr을 연달아 감소시킨 탓으로 판단했다. 따라서 학습 안정성을 줄일 필요가 있다고 판단했다.	|	배치 사이즈를 증가시키면 배치의 분산이 줄어들고, 기울기 업데이트의 분산도 줄어들어서 학습이 안정적으로 변다.|	D와 비교했을 때 val loss의 반등양상이 감소했고, 이는 오버피팅이 더 억제된 결과라고 판단했다.|	
 |model name|F|G|H|I|J|
-|feature||||||
-|val loss|![Image](https://github.com/user-attachments/assets/912684d8-a1e9-4adf-99c4-4477c633e6fc)|![Image](https://github.com/user-attachments/assets/7d045543-033e-4222-8a6c-27cc9450006c)|![Image](https://github.com/user-attachments/assets/c826b9c0-e07a-47bb-ae3e-958fc485e993)|![Image](https://github.com/user-attachments/assets/2f31b431-8337-4049-aa48-da4bcc9d2e4c)|![Image](https://github.com/user-attachments/assets/fca806ee-93e9-4378-a196-d7dfed50bda0)|
-|result||||||
+|feature|	E의 FC 층에 드롭아웃 (0.5) 추가|E의 FC 층에 드롭아웃 (0.8) 추가|G에 L2 정규화 (1e-3) 추가|G에 L2 정규화 (1e-4) 추가|H에 데이터 증강 (RandomRotation 20) 추가|
+|val loss|![Image](https://github.com/user-attachments/assets/912684d8-a1e9-4adf-99c4-4477c633e6fc)|![Image](https://github.com/user-attachments/assets/7d045543-033e-4222-8a6c-27cc9450006c)|![Image](https://github.com/user-attachments/assets/c826b9c0-e07a-47bb-ae3e-958fc485e993)|![Image](https://github.com/user-attachments/assets/0c7f288f-0ba2-4aa8-89a6-2f026398ec1d)|![Image](https://github.com/user-attachments/assets/fca806ee-93e9-4378-a196-d7dfed50bda0)|
+|final val loss/acc||||||
+|result|val loss를 더 줄이기 위해 드롭아웃을 0.5비율로 추가했지만, 추가 이전과 성능 차이가 크지 않았다. 비율을 늘릴 필요가 있어보인다.|드롭아웃 비율이 0.5일 때보다 val loss가 더 빠르게 수렴한다. 성능도 향상됐다.|val loss를 더 줄이기 위해 L2 정규화를 1e-3 가중치로 추가했지만, 추가 이전과 성능 차이가 크지 않았다. 가중치를 증가시킬 필요가 있어보인다.|L2 정규화 가중치를 1e-3에서 1e-2로 감소시켰지만, 감소 이전과 성능 차이가 크지 않았다.H를 유지하기로 결정했다.|val data와 train data의 차이가 커진 탓에 val loss의 수렴속도가 느려진 것으로 해석했다.|
 |model name|K|L|M|N|O|
-|feature||||||
+|feature|J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-3 유지|J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-4로 수정|J의 optimizer를 SGD에서 ADAM으로 교체했다. lr=5*1e-3 유지, L2가중치=1e-2로 수정|L에서 lr을 5*1e-3에서 5*1e-2로 수정|L에서 lr을 5*1e-3에서 1*1e-3으로 수정|
 |val loss|![Image](https://github.com/user-attachments/assets/da966e73-111d-47de-80ed-bbdbf2b25b06)|![Image](https://github.com/user-attachments/assets/d081e5ba-6e3b-45af-8fb4-fd0e485edab0)|![Image](https://github.com/user-attachments/assets/1370e4f4-82e9-4124-a530-03111bce1070)|![Image](https://github.com/user-attachments/assets/044a2fd8-79b8-4d7b-8ccf-09e31f6ccec5)|![Image](https://github.com/user-attachments/assets/c9c071d5-f407-430d-817a-4c586f701aeb)|
+|final val loss/acc||||||
 |result||||||
 |model name|P|Q|R|S|T|
 |feature||||||
 |val loss|![Image](https://github.com/user-attachments/assets/ef1c948a-383b-40d0-900a-be4f163b3c9b)|![Image](https://github.com/user-attachments/assets/49d357ed-3aa7-4930-a044-8c2ea6860700)|![Image](https://github.com/user-attachments/assets/5ec0f562-f645-41ef-b866-622c399c5d3e)|![Image](https://github.com/user-attachments/assets/73ab3b16-5964-4401-a565-b981563bcbfe)|![Image](https://github.com/user-attachments/assets/59b81288-9da0-4e20-9b34-a818a018db47)|
+|final val loss/acc||||||
 |result||||||
 |model name|U|V|W|X|Y|
 |feature||||||
 |val loss|![Image](https://github.com/user-attachments/assets/3b1016c0-c9e2-43bb-bb58-19dcba555812)|![Image](https://github.com/user-attachments/assets/be389cb8-70ec-4315-bb1f-980d5d9d91a0)|![Image](https://github.com/user-attachments/assets/13840fec-c408-4997-ad1a-244af4a36dfd)|![Image](https://github.com/user-attachments/assets/2a7e3240-37fa-466f-9a58-8b7dccaa67c2)|![Image](https://github.com/user-attachments/assets/ce3cecb4-3064-4621-8ee8-8b18243af2c4)|
+|final val loss/acc||||||
 |result||||||
 |model name|Z|AA|AB|AC|AD|
 |feature||||||
 |val loss|![Image](https://github.com/user-attachments/assets/43c91944-2c0b-45b2-9b01-fe9156c32a60)|![Image](https://github.com/user-attachments/assets/a7a7dd91-3cce-47c1-8e46-4e724822bf22)|![Image](https://github.com/user-attachments/assets/3a86c501-1fab-4782-9159-097e57bc7d20)|![Image](https://github.com/user-attachments/assets/e9a1b41c-06bc-41d8-986d-6177c6608650)|![Image](https://github.com/user-attachments/assets/10e9df58-fd60-4c86-9afa-c1b945e6f636)|
+|final val loss/acc||||||
 |result||||||
 
 
