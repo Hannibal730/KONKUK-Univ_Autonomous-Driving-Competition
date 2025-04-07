@@ -290,7 +290,14 @@ flowchart TD
 
 
 # 페이션트 에포크 수정 필요
-<table>
+<table style="width:100%; table-layout: fixed;">
+  <colgroup>
+    <col style="width:20%;">
+    <col style="width:20%;">
+    <col style="width:20%;">
+    <col style="width:20%;">
+    <col style="width:20%;">
+  </colgroup>
   <tr>
     <!-- 새 순서: 이미지 30, 1, 2, 3, 4 -->
     <td><img src="https://github.com/user-attachments/assets/d9e70ee2-11a5-4b84-a51f-55c66799dd19" width="400" alt="Image"></td>
