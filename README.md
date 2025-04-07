@@ -6,10 +6,6 @@
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 - #### **수상이력:** 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
   <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">
-----
-<br>
-
-# 자율주행 딥러닝 모델
 ---
 <br>
 
@@ -43,7 +39,7 @@
 
 |direction|go|left|right|
 |:---:|:---:|:---:|:---:|
-|Preprocessed <br> images|<img src="https://github.com/user-attachments/assets/95112164-7efa-46c3-af64-9926aae694b3" width="150" alt="Image">  |<img src="https://github.com/user-attachments/assets/85175b2b-5a76-460c-bf55-6e8d5ac9a00f" width="150" alt="Image">|<img src="https://github.com/user-attachments/assets/8ba87864-7ac3-47da-8831-2f9b69dc81dc" width="150" alt="Image">|
+|Preprocessed <br> images|<img src="https://github.com/user-attachments/assets/95112164-7efa-46c3-af64-9926aae694b3" width="150" alt="Image">  | <img src="https://github.com/user-attachments/assets/85175b2b-5a76-460c-bf55-6e8d5ac9a00f" width="150" alt="Image"> | <img src="https://github.com/user-attachments/assets/8ba87864-7ac3-47da-8831-2f9b69dc81dc" width="150" alt="Image">|
 
 
 ### 2.3 데이터 저장 디렉토리
@@ -307,14 +303,6 @@ flowchart TD
     <td>D</td>
     <td>E</td>
   </tr>
-    <tr>
-    <td>feature</td>
-    <td>A</td>
-    <td>B</td>
-    <td>C</td>
-    <td>D</td>
-    <td>E</td>
-  </tr>
   <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/d9e70ee2-11a5-4b84-a51f-55c66799dd19" width="400" alt="Image"></td>
@@ -324,6 +312,14 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/a39b15ce-cb21-44c4-9666-df87102ee909" width="400" alt="Image"></td>
   </tr>
   <tr>
+    <td>feature</td>
+    <td>초기 설계 모델. SGD (lr=5*1e-3</td>
+    <td>A에 스케줄러(0.5배) 추가. min_lr=1e-6</td>
+    <td>B의 모든 relu 층마다 바로 직전에 배치 정규화 층을 추가</td>
+    <td>C의 배치 사이즈를 128에서 256으로 수정</td>
+    <td>D의 배치 사이즈를 256에서 512으로 수정</td>
+  </tr>
+  <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/8c90e538-a6ab-48a3-8a32-fcdd4b0ac3d4" width="400" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/66f606af-a45a-4f1f-88fa-4bf2ded49754" width="400" alt="Image"></td>
@@ -331,6 +327,13 @@ flowchart TD
     <td><img src="https://github.com/user-attachments/assets/b85ceae6-f90b-4f79-85c1-faf9bb86aebb" width="400" alt="Image"></td>
     <td><img src="https://github.com/user-attachments/assets/0061e33c-0ba2-4945-bfbb-0af0b14d8e5c" width="400" alt="Image"></td>
   </tr>
+  <tr>
+    <td> final val loss, acc </td>
+    <td> a </td>
+    <td> a </td>
+    <td> a </td>
+    <td> a </td>
+    <td> a </td>
   <tr>
     <td>val loss</td>
     <td><img src="https://github.com/user-attachments/assets/77e8422e-d539-4056-8c21-0b622057d26f" width="400" alt="Image"></td>
