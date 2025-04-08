@@ -145,8 +145,6 @@ flowchart TD
     G2 --> H
 
 ```
-![Image](https://github.com/user-attachments/assets/a5b7fa5b-83f6-4c17-bb05-b73ac7e49db5)
-
 
 ---
 <br>
