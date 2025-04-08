@@ -5,17 +5,12 @@
 - #### **주임교수:** 건국대학교 기계항공공학부 김창완
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 - #### **수상이력:** 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
-  
-  
-  ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3dc3ae23-0050-4f5a-87f2-cd0ce5652faa)
-
-  
-  <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">---
+  ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3dc3ae23-0050-4f5a-87f2-cd0ce5652faa) <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">---
 <br>
 
 ## 1. 서론 (Introduction)
 
-본 연구에서는 소규모 이미지(64×64)를 대상으로 전이학습(Transfer Learning)을 활용한 이미지 분류 파이프라인을 제안한다.
+본 프로젝트에서는 소규모 이미지(64×64)를 대상으로 전이학습(Transfer Learning)을 활용한 이미지 분류 파이프라인을 제안한다.
 <br>
 기존의 대형 네트워크가 소규모 입력에 대해 과도한 다운샘플링을 발생시키는 문제를 개선하기 위해, 사전 학습된 ResNet 모델의 입력 계층 및 출력 계층을 수정하고, 다양한 데이터 증강 기법을 적용하여 모델의 일반화 성능을 향상시키고자 한다.
 <br>
@@ -542,9 +537,9 @@ flowchart TD
 ---
 <br>
 
-## 8. 결론 (Conclusion)
+## 7. 결론 (Conclusion)
 
-본 연구에서는 전이학습 기반의 ResNet 모델을 소규모 이미지 분류 문제에 효과적으로 적용하기 위한 종합적인 파이프라인을 제안하였다.  
+본 프로젝트에서는 전이학습 기반의 ResNet 모델을 소규모 이미지 분류 문제에 효과적으로 적용하기 위한 종합적인 파이프라인을 제안하였다.  
 - **주요 기여:**  
   - 소규모 이미지에 적합한 입력 계층 수정 및 maxpool 제거를 통한 해상도 보존  
   - 다양한 데이터 증강 기법(RandomRotation, RandomAffine, RandomResizedCrop)을 적용하여 모델의 일반화 성능 강화  
