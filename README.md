@@ -48,7 +48,7 @@
   ├── left : 1로 라벨링된 좌회전 이미지  <br>
   └── right : 2로 라벨링링된 우회전 이미지
 
-### 2.4 데이 파일 다운로드
+### 2.4 데이터 파일 다운로드
 - [Click Here](https://drive.google.com/file/d/1aTDsimYZ3yXoyvhpsowJX1jH8MCZJUkK/view?usp=drive_link)
 ---
 <br>
