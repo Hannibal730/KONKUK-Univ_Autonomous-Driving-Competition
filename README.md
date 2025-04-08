@@ -180,7 +180,19 @@ flowchart TD
 
 ## 6. 실험 및 파라미터 튜닝(Experiments and Parameter Tuning)
 
-### 6.1 직접 설계한 초기 모델 A
+### 6.1 학습 곡선 시각화
+- **손실 곡선:**  
+  Matplotlib을 활용하여 에폭별 학습 손실과 검증 손실을 그래프로 시각화한다.
+- **정확도 곡선:**  
+  학습 정확도와 검증 정확도의 변화를 별도의 그래프로 나타내어, 모델의 수렴 및 일반화 성능을 직관적으로 확인할 수 있다.
+
+### 6.2 최종 모델 평가
+- **최적 모델 선택:**  
+  조기 종료 기준에 따라 저장된 최적의 모델 가중치를 불러와 최종 평가를 진행한다.
+- **평가 지표:**  
+  전체 검증 데이터셋에 대해 최종 손실과 정확도를 계산하여 모델의 성능을 정량적으로 평가한다.
+
+### 6.3 초기 모델: 직접 설계한  A
 - 컨볼루젼 층 표기방식:  
 conv 'receptive field size' - 'number of channels'
 - 학습 방법:  
@@ -208,9 +220,12 @@ flowchart TD
 
 ```
 
-### 6.2 val loss를 기준으로 성능 실험
+### 6.4 전이학습 도입
 - 초기 모델 A부터 성능을 실험하며, val loss를 낮추기 위한 파인 튜닝을 진행하였다.
 - A의 변형만으로는 성능 개선에 한계를 느꼈고, 이후 전이학습을 도입하게 되었다.
+
+---
+<br>
 
 <table style="width:100%; table-layout: fixed; font-size:5px;">
   <colgroup>
@@ -519,23 +534,6 @@ flowchart TD
 
 [Click Here to Download moedel AE's weights](https://drive.google.com/file/d/1oDPB-OJ6rw_lGgLP6QWUsNJ0bAXcrVNg/view?usp=sharing)
 
-
----
-<br>
-
-## 7. 결과 시각화 및 최종 평가 (Results Visualization and Final Evaluation)
-
-### 7.1 학습 곡선 시각화
-- **손실 곡선:**  
-  Matplotlib을 활용하여 에폭별 학습 손실과 검증 손실을 그래프로 시각화한다.
-- **정확도 곡선:**  
-  학습 정확도와 검증 정확도의 변화를 별도의 그래프로 나타내어, 모델의 수렴 및 일반화 성능을 직관적으로 확인할 수 있다.
-
-### 7.2 최종 모델 평가
-- **최적 모델 선택:**  
-  조기 종료 기준에 따라 저장된 최적의 모델 가중치를 불러와 최종 평가를 진행한다.
-- **평가 지표:**  
-  전체 검증 데이터셋에 대해 최종 손실과 정확도를 계산하여 모델의 성능을 정량적으로 평가한다.
 
 ---
 <br>
