@@ -517,6 +517,8 @@ flowchart TD
 </table>
 
 
+[Click Here to Download moedel AE's weights](https://drive.google.com/file/d/1oDPB-OJ6rw_lGgLP6QWUsNJ0bAXcrVNg/view?usp=sharing)
+
 
 ---
 <br>
