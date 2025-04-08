@@ -131,7 +131,7 @@ scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=4, ver
 # Training Loop with Early Stopping (based on validation loss)
 num_epochs = 120
 best_val_loss = float('inf')
-patience = 120
+patience = 30
 patience_counter = 0
 
 train_losses = []
