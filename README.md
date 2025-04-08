@@ -6,7 +6,8 @@
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 - #### **수상이력:** 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
   ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/3dc3ae23-0050-4f5a-87f2-cd0ce5652faa) <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">---
-<br>
+<br>![Uploading KakaoTalk_20250408_175949368-ezgif.com-video-to-gif-converter.gif…]()
+
 
 ## 1. 서론 (Introduction)
 
