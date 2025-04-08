@@ -5,8 +5,11 @@
 - #### **주임교수:** 건국대학교 기계항공공학부 김창완
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 - #### **수상이력:** 1등 대상 [Click Here](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
-  <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">
----
+  
+  
+  
+  
+  <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">---
 <br>
 
 ## 1. 서론 (Introduction)
@@ -543,15 +546,11 @@ flowchart TD
 본 연구에서는 전이학습 기반의 ResNet 모델을 소규모 이미지 분류 문제에 효과적으로 적용하기 위한 종합적인 파이프라인을 제안하였다.  
 - **주요 기여:**  
   - 소규모 이미지에 적합한 입력 계층 수정 및 maxpool 제거를 통한 해상도 보존  
-  - 다양한 데이터 증강 기법(RandomRotation, RandomAffine, RandomResizedCrop 등)을 적용하여 모델의 일반화 성능 강화  
+  - 다양한 데이터 증강 기법(RandomRotation, RandomAffine, RandomResizedCrop)을 적용하여 모델의 일반화 성능 강화  
   - 사전 학습된 모델을 기반으로 한 출력 계층 수정 및 안정적인 학습 전략(학습률 스케줄링, 조기 종료) 구현  
 - **실험 결과:**  
-  제안한 방법을 통해 학습 과정에서 손실 및 정확도 변화를 면밀히 모니터링하였으며, 최종 평가에서 우수한 분류 성능을 확인할 수 있었다.
+  제안한 방법을 통해 학습 과정에서 손실 및 정확도 변화를 모니터링하였으며, 최종 평가에서 우수한 분류 성능을 확인할 수 있었다.
 - **향후 연구 방향:**  
-  다양한 데이터 증강 방법에 대해서 계획적으로 실험하는 방법을 공부하고 싶다.
+  다양한 데이터 증강 방법에 대해서 계획적으로 실험하는 방법을 공부하고 싶다. 만약 더 계획적으로 모델별 성능을 추적할 수 있었다면, 좋은 파라미터 조합을 더 많이 찾을 수 있었을 것 같아서 아쉽다.
 
 ---
-
-
-
-# 페이션트 에포크 수정 필요
