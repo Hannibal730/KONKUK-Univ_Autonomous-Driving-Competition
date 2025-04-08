@@ -7,7 +7,7 @@
 - #### **수상이력:** 1등 대상
   <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">
   <img src="https://github.com/user-attachments/assets/b26d9799-42de-45f6-acf3-9667a851397f" alt="KakaoTalk_20250408_175949368-ezgif com-video-to-gif-converter" width="600">
-  <img src="https://github.com/user-attachments/assets/cbbcbb5f-a21a-42d7-96b6-b477d0f0e6d5" alt="ezgif com-video-to-gif-converter" width="500">
+  <img src="https://github.com/user-attachments/assets/cbbcbb5f-a21a-42d7-96b6-b477d0f0e6d5" alt="ezgif com-video-to-gif-converter" width="320">
 
 
   
