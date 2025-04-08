@@ -5,14 +5,15 @@
 - #### **주임교수:** 건국대학교 기계항공공학부 김창완
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
 - #### **수상이력:** 1등 대상
-  <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="320" alt="Image">
-  <img src="https://github.com/user-attachments/assets/cbbcbb5f-a21a-42d7-96b6-b477d0f0e6d5" alt="ezgif com-video-to-gif-converter" width="320">
+  <img src="https://github.com/user-attachments/assets/cbbcbb5f-a21a-42d7-96b6-b477d0f0e6d5" alt="ezgif com-video-to-gif-converter" width="320">  
+  <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">
+
   <img src="https://github.com/user-attachments/assets/b26d9799-42de-45f6-acf3-9667a851397f" alt="KakaoTalk_20250408_175949368-ezgif com-video-to-gif-converter" width="600">
-  
 
 
+
   
-[an article about the competition](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
+  [an article about the competition](https://www.konkuk.ac.kr/konkuk/2096/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGa29ua3VrJTJGMjU3JTJGMTEzMTA1OCUyRmFydGNsVmlldy5kbyUzRg==)
  
 
 ## 1. 서론 (Introduction)
