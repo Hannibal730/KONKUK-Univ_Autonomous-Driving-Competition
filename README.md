@@ -1,3 +1,7 @@
+![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=Hannibal730.KONKUK-Univ_Autonomous-Driving-Competition
+)
+
+
 # 건국대학교 주관 행동모사 자율주행 경진대회
 
 - #### **대회일:** 2024/06/27
