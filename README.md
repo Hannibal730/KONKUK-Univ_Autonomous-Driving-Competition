@@ -8,7 +8,7 @@
 - #### **내용:** 카메라로 촬영한 주행데이터를 기반으로 자율주행 딥러닝 모델을 개발하고, 1/10 size 차량에 탑재하여 자율주행 경기를 진행한다.
 - #### **주임교수:** 건국대학교 기계항공공학부 김창완
 - #### **팀원:** 건국대학교 응용통계학과 최대승, 건국대학교 기계공학과 석승연
-- #### **수상이력:** 1등 대상
+- #### **수상이력:** 1위 대상
   <img src="https://github.com/user-attachments/assets/cbbcbb5f-a21a-42d7-96b6-b477d0f0e6d5" alt="ezgif com-video-to-gif-converter" width="320">  
   <img src="https://github.com/user-attachments/assets/6288de28-31e7-4c11-a0f6-63b9f097e01c" width="400" alt="Image">
 
